@@ -1,0 +1,296 @@
+
+/*fonts*/
+@font-face {
+  font-family: "Lemon Milk";
+  src: url(LemonMilk.otf);
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url(CaviarDreams.ttf);
+}
+
+/*animations*/
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform:translateY(-6vh);
+  }
+  50% {
+    transform:translateY(-1vh);
+  }
+  100% {
+    transform:translateY(-6vh);
+  }
+}
+
+@keyframes plane {
+  0% {
+    transform:translateY(5vh);
+  }
+  50% {
+    transform:translateY(0vh);
+  }
+  100% {
+    transform:translateY(5vh);
+  }
+}
+
+/*hide scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*root colors and fonts*/
+:root {
+  --fadedred: #CF6766;
+  --darkblue: #031424;
+  --lightblue: #97AABD;
+  --lightbeige: #EEE2DC;
+  --mediumbeige: #EDC7B7;
+  --lightgrey: #BAB2B5;
+  --oceanblue: #0F6178;
+  --titlefont: "Lemon Milk";
+  --bodyfont: "Caviar Dreams";
+}
+
+html, body {
+  width: 100vw;
+  height: 100%;
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  margin: 0;
+  overflow: hidden;
+}
+
+/*portfolio plane*/
+.plane{
+  height: 10vh;
+  width: 30vw;
+  position: absolute;
+  left: 100vw;
+  animation-name: plane;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+/*waves*/
+.ocean {
+  height: 0%;
+  width: 100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  opacity: 0;
+}
+
+.wave{
+  position: relative;
+  top: -35vh;
+  left: -50vw;
+  height: 35vh;
+  width: 150vw;
+  overflow-x: hidden;
+}
+
+/*animated intro and end logo*/
+#intro {
+  height: 100vh;
+  width: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#end {
+  height: 55vh;
+  width: 55vh;
+  position: absolute;
+  top: 4vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+
+/*intro container w/ logo*/
+.container1 {
+  width: 100vh;
+  height: 100vh;
+}
+
+/*menu bar*/
+.introfadein{
+  opacity: 0;
+}
+
+#navbar {
+    background-color: var(--darkblue);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    z-index: 10;
+    opacity: 1;
+    transition: top 0.3s;
+}
+
+#navbar a {
+    float: right;
+    display: block;
+    color: var(--lightbeige);
+    text-align: center;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "Caviar Dreams";
+    letter-spacing: 1px;
+}
+
+#navbar a:hover {
+    background-color: var(--lightbeige);
+    color: var(--darkblue);
+    transition-duration: .3s;
+}
+
+#navbar #alexyan {
+  float: left;
+}
+
+#navbar #alexyan:hover {
+  background-color: var(--darkblue);
+  color: var(--lightbeige);
+  transition-duration: .3s;
+}
+
+/*side scrollbar*/
+.scrollbar {
+  position: fixed;
+  top: 50%;
+  margin-top: -15vh;
+  right: 0;
+  opacity: 0;
+  z-index: 5;
+}
+
+.scrollbarchild {
+  height: 2.5vh;
+  width: 2.5vh;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--darkblue);
+  margin: 2vh;
+}
+
+/*scroll down button*/
+.wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2vh;
+  z-index: 5;
+}
+
+.scrolldown {
+  height: 4vh;
+  width: 8vh;
+  font-family: var(--bodyfont);
+  text-decoration: none;
+  opacity: 0;
+  overflow: none;
+  z-index: 5;
+  animation-name: float;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
+  -webkit-clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
+  background-color: var(--darkblue);
+}
+
+/*content containers*/
+.main {
+  width: 100vh;
+  position: absolute;
+  top: 100vh;
+}
+
+/*first heading container*/
+.container2 {
+  width: 100vw;
+  height: 120vh;
+  overflow: hidden;
+  position: static;
+  top: 130vh;
+  background-color: var(--lightbeige);
+}
+
+/*first heading*/
+.aboutme {
+  font-family: var(--titlefont);
+  position: relative;
+  left: 9vw;
+  height: 10vh;
+  padding-top: 12vh;
+  color: var(--darkblue);
+}
+
+.aboutmesmall {
+  position: relative;
+  top: 3vh;
+  left: -1vw;
+  font-size: 10vh;
+}
+
+.aboutmebig {
+  position: relative;
+  top: -20vh;
+  left: -4vw;
+  font-size: 18vh;
+}
+
+/*aboutme content*/
+.education{
+  box-shadow: 5px 5px var(--darkblue);
+  height: 10vh;
+  width: 88vw;
+  background-color: var(--lightbeige);
+  position: absolute;
+  left: 5vw;
+  top: 30vh;
+  font-size: 8vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: var(--bodyfont)
+}
+
+.container3{
+  width: 100vw;
+  height: 120vh;
+  top: 230vh;
+  background: linear-gradient(var(--lightblue), var(--mediumbeige));;
+
+}
