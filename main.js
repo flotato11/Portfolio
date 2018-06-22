@@ -40,33 +40,33 @@ window.onload = scrollWork;
 
 //title
     if($(document).scrollTop()>"400")
-      $('.aboutmebig').css("left","-4vw");
-      $('.aboutmebig').css("transition-duration", ".25s");
+      $('.aboutbig').css("left","-4vw");
+      $('.aboutbig').css("transition-duration", ".25s");
     if($(document).scrollTop()<"650")
-      $('.aboutmebig').css("left","-20vw");
-      $('.aboutmebig').css("transition-duration", ".25s");
+      $('.aboutbig').css("left","-20vw");
+      $('.aboutbig').css("transition-duration", ".25s");
 
     if($(document).scrollTop()>"400")
-      $('.aboutmesmall').css("left","-1vw");
-      $('.aboutmesmall').css("transition-duration", ".25s");
-      $('.aboutmesmall').css("transition-delay", ".1s");
+      $('.aboutsmall').css("left","-1vw");
+      $('.aboutsmall').css("transition-duration", ".25s");
+      $('.aboutsmall').css("transition-delay", ".1s");
     if($(document).scrollTop()<"640")
-      $('.aboutmesmall').css("left","-20vw");
-      $('.aboutmesmall').css("transition-duration", ".25s");
+      $('.aboutsmall').css("left","-20vw");
+      $('.aboutsmall').css("transition-duration", ".25s");
 
     if($(document).scrollTop()>"400")
-      $('.aboutmesmall').css("opacity","1");
-      $('.aboutmesmall').css("transition-duration", ".25s");
+      $('.aboutsmall').css("opacity","1");
+      $('.aboutsmall').css("transition-duration", ".25s");
     if($(document).scrollTop()<"650")
-      $('.aboutmesmall').css("opacity","0");
-      $('.aboutmesmall').css("transition-duration", ".25s");
+      $('.aboutsmall').css("opacity","0");
+      $('.aboutsmall').css("transition-duration", ".25s");
 
     if($(document).scrollTop()>"400")
-      $('.aboutmebig').css("opacity",".1");
-      $('.aboutmebig').css("transition-duration", ".25s");
+      $('.aboutbig').css("opacity",".1");
+      $('.aboutbig').css("transition-duration", ".25s");
     if($(document).scrollTop()<"650")
-      $('.aboutmebig').css("opacity","0");
-      $('.aboutmebig').css("transition-duration", ".25s");
+      $('.aboutbig').css("opacity","0");
+      $('.aboutbig').css("transition-duration", ".25s");
 });
 
 */
@@ -94,8 +94,8 @@ window.onscroll = function() {
 
 $(window).on('scroll', function() {
    var st = $(this).scrollTop() - 200;
-   $('.aboutmesmall').css({ 'opacity' : (0 + st/100) });
-   $('.aboutmebig').css({ 'opacity' : (0 + st/1000) });
-   $('.aboutmesmall').css({ 'left' : (0 + st/3) });
-   $('.aboutmebig').css({ 'left' : (-80 + st/5) });
+   $('.aboutsmall').css({ 'opacity' : (0 + st/100) });
+   $('.aboutbig').css({ 'opacity' : (0 + st/1000) });
+   $('.aboutsmall').css({ 'left' : (0 + st/3) });
+   $('.aboutbig').css({ 'left' : (-80 + st/5) });
 });

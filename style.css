@@ -10,6 +10,11 @@
   src: url(CaviarDreams.ttf);
 }
 
+@font-face {
+  font-family: "Caviar Dreams Bold";
+  src: url(CaviarDreamsBold.ttf);
+}
+
 /*animations*/
 @keyframes wave {
   0% {
@@ -176,6 +181,7 @@ html, body {
 
 #navbar #alexyan {
   float: left;
+  font-family: "Caviar Dreams";
 }
 
 #navbar #alexyan:hover {
@@ -247,31 +253,42 @@ html, body {
   background-color: var(--lightbeige);
 }
 
+/*heading style*/
+.headingstyle{
+  clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+  background-color: var(--lightblue);
+  width: 80vw;
+  height: 40vh;
+  position: absolute;
+  top: -5vh;
+  left: -7vw;
+}
+
 /*first heading*/
-.aboutme {
+.about {
   font-family: var(--titlefont);
   position: relative;
-  left: 9vw;
+  left: 7vw;
   height: 10vh;
   padding-top: 12vh;
   color: var(--darkblue);
 }
 
-.aboutmesmall {
+.aboutsmall {
   position: relative;
   top: 3vh;
   left: -1vw;
   font-size: 10vh;
 }
 
-.aboutmebig {
+.aboutbig {
   position: relative;
   top: -20vh;
   left: -4vw;
   font-size: 18vh;
 }
 
-/*aboutme content*/
+/*about content*/
 .education{
   box-shadow: 5px 5px var(--darkblue);
   height: 10vh;
