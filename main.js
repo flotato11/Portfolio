@@ -13,16 +13,19 @@ $(document).ready(function(){
   $('.plane').css("transition-delay", "4s");
   $('.plane').css("transition-duration", "25s");
   $('.plane').css("transition-timing-function", "linear");*/
-
-  $('.scrollbarchild').click(function(){
-    $('.scrollbarchild').css("background-color","var(--darkblue)")
-    $(this).css("background-color","var(--lightgrey)")
-    $(this).css("transition-duration", ".5s");
-    $(this).css("transition-delay", ".5s");
-  });
-
-
 });
+
+$('.scrollbarchild').click(function(){
+  $('.scrollbarchild').css("background-color","var(--darkblue)")
+  $(this).css("background-color","var(--lightgrey)")
+  $(this).css("transition-duration", ".5s");
+  $(this).css("transition-delay", ".5s");
+});
+
+$('gradeimage').click(function(){
+  $(this).css("height","80vh");
+
+})
 
 /*scroll lockout on load in*/
 function scrollWork() {
@@ -85,7 +88,7 @@ window.onscroll = function() {
 
 /*animate on scroll position*/
 $(window).on('scroll', function() {
-  if ($(this).scrollTop() > 1000) {
+  if ($(this).scrollTop() > 1200) {
     $('.abouttag').css('top', '0vh')
   }
   else {
@@ -93,7 +96,6 @@ $(window).on('scroll', function() {
   }
 
    var st = $(this).scrollTop()- 200;
-   var sb = $(this).scrollTop()- 200;
    $('.aboutsmall').css({ 'opacity' : (0 + st/100) });
    $('.aboutbig').css({ 'opacity' : (0 + st/1500) });
    $('.aboutsmall').css({ 'left' : (0 + st/3) });
@@ -101,6 +103,6 @@ $(window).on('scroll', function() {
    $('.aboutheader').css({ 'right' : Math.min(-250 + st/2,0) });
    $('.education,.courses,.clubs').children('.vertical-line').css({ 'height' : Math.min(0 + st-600/2, 350) });
    $('.educationcontent,.coursescontent,.clubscontent').css({ 'opacity' : (-5 + st/100) });
-   $('.ninth,.tenth').children('.vertical-line').css({ 'height' : Math.min(-950 + st-400/2, 350) });
-   $('.ninthcontent,.tenthcontent').css({ 'opacity' : (-13 + st/100) });
+   $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-950 + st-400/2, 300) });
+   $('.ninthcontent,.tenthcontent,.eleventhcontent').css({ 'opacity' : (-13 + st/100) });
 });
