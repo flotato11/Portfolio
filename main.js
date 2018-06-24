@@ -98,6 +98,9 @@ $(window).on('scroll', function() {
    $('.aboutbig').css({ 'opacity' : (0 + st/1500) });
    $('.aboutsmall').css({ 'left' : (0 + st/3) });
    $('.aboutbig').css({ 'left' : (-80 + st/5) });
+   $('.aboutheader').css({ 'right' : Math.min(-250 + st/2,0) });
    $('.education,.courses,.clubs').children('.vertical-line').css({ 'height' : Math.min(0 + st-600/2, 350) });
    $('.educationcontent,.coursescontent,.clubscontent').css({ 'opacity' : (-5 + st/100) });
+   $('.ninth,.tenth').children('.vertical-line').css({ 'height' : Math.min(-950 + st-400/2, 350) });
+   $('.ninthcontent,.tenthcontent').css({ 'opacity' : (-13 + st/100) });
 });
