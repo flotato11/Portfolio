@@ -15,6 +15,16 @@
   src: url(CaviarDreamsBold.ttf);
 }
 
+@font-face {
+  font-family: "Proxima Nova Regular";
+  src: url(ProximaNovaRegular.ttf);
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url(ProximaNovaLight.ttf);
+}
+
 /*animations*/
 @keyframes wave {
   0% {
@@ -72,8 +82,11 @@
   --mediumbeige: #EDC7B7;
   --lightgrey: #BAB2B5;
   --oceanblue: #0F6178;
-  --titlefont: "Lemon Milk";
-  --bodyfont: "Caviar Dreams";
+  --titlefont1: "Lemon Milk";
+  --titlefont2: "Caviar Dreams Bold";
+  --bodyfont1: "Caviar Dreams";
+  --bodyfont2: "Proxima Nova Light";
+  --bodyfont3: "Proxima Nova Regular";
 }
 
 html, body {
@@ -153,11 +166,12 @@ html, body {
     background-color: var(--darkblue);
     position: fixed;
     top: 0px;
-    width: 100%;
-    height: 40px;
-    z-index: 10;
+    width: 100vw;
+    height: 5vh;
+    z-index: 2;
     opacity: 1;
     transition: top 0.3s;
+    transition-delay: .5s;
 }
 
 #navbar a {
@@ -165,23 +179,24 @@ html, body {
     display: block;
     color: var(--lightbeige);
     text-align: center;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 1.1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
     text-decoration: none;
-    font-family: "Caviar Dreams";
+    font-family: var(--bodyfont2);
     letter-spacing: 1px;
+    font-size: 2.4vh;
 }
 
 #navbar a:hover {
     background-color: var(--lightbeige);
     color: var(--darkblue);
     transition-duration: .3s;
+    transition-delay: 0s;
 }
 
 #navbar #alexyan {
   float: left;
-  font-family: "Caviar Dreams";
 }
 
 #navbar #alexyan:hover {
@@ -201,8 +216,8 @@ html, body {
 }
 
 .scrollbarchild {
-  height: 2.5vh;
-  width: 2.5vh;
+  height: 2vh;
+  width: 2vh;
   border-radius: 50%;
   position: relative;
   background-color: var(--darkblue);
@@ -222,8 +237,6 @@ html, body {
 .scrolldown {
   height: 4vh;
   width: 8vh;
-  font-family: var(--bodyfont);
-  text-decoration: none;
   opacity: 0;
   overflow: none;
   z-index: 5;
@@ -246,7 +259,7 @@ html, body {
 /*first heading container*/
 .container2 {
   width: 100vw;
-  height: 120vh;
+  height: 200vh;
   overflow: hidden;
   position: static;
   top: 130vh;
@@ -255,18 +268,19 @@ html, body {
 
 /*heading style*/
 .headingstyle{
-  clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 53% 100%, 0% 100%);
   background-color: var(--lightblue);
-  width: 80vw;
+  width: 90vw;
   height: 40vh;
   position: absolute;
   top: -5vh;
   left: -7vw;
+  z-index: 1;
 }
 
 /*first heading*/
 .about {
-  font-family: var(--titlefont);
+  font-family: var(--titlefont1);
   position: relative;
   left: 7vw;
   height: 10vh;
@@ -279,6 +293,7 @@ html, body {
   top: 3vh;
   left: -1vw;
   font-size: 10vh;
+  z-index: 2;
 }
 
 .aboutbig {
@@ -286,22 +301,147 @@ html, body {
   top: -20vh;
   left: -4vw;
   font-size: 18vh;
+  z-index: 2;
+}
+
+.abouttag{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  background-color: var(--lightblue);
+  position: fixed;
+  float: right;
+  right: -.5vw;;
+  top: -10vh;
+  width: 10vw;
+  height: 5vh;
+  text-align: center;
+  padding-top: 1vh;
+  padding-left: .5vw;
+  font-size: 3vh;
+  color: var(--darkblue);
+  transition: top .3s;
 }
 
 /*about content*/
-.education{
-  box-shadow: 5px 5px var(--darkblue);
-  height: 10vh;
-  width: 88vw;
-  background-color: var(--lightbeige);
+
+/*about header*/
+.aboutheader{
+  float: right;
+  right: 0;
+  font-family: var(--bodyfont3);
+  text-align: right;
+}
+
+/*education*/
+.education {
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
   position: absolute;
-  left: 5vw;
-  top: 30vh;
-  font-size: 8vh;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  font-family: var(--bodyfont)
+  left: 7vw;
+  top: 45vh;
+  letter-spacing: -.2vw;
+}
+
+.educationcontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+}
+
+.blocktext{
+  font-family: var(--bodyfont2);
+  font-size: 3vh;
+  width: 30vw;
+  padding-top: 1vh;
+}
+
+/*courses*/
+.courses{
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 40vw;
+  top: 45vh;
+  letter-spacing: -.2vw;
+}
+
+.coursescontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+  width: 40vw;
+  position: relative;
+  padding-top: 1vh;
+}
+
+.coursescode{
+  font-size: 2.5vh;
+}
+
+.spacing {
+  position: relative;
+  margin-bottom: .75vh;
+}
+
+/*clubs*/
+.clubs{
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 70vw;
+  top: 45vh;
+  letter-spacing: -.2vw;
+}
+
+.clubscontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+  width: 20vw;
+  position: relative;
+}
+
+.clubsheading {
+  font-size: 4vh;
+}
+
+.clubsbox {
+  font-size: 2vh;
+  letter-spacing: 0vw;
+  margin-left: 1vw;
+  margin-top: .25vh;
+  margin-bottom: .25vh;
+}
+/*line animations*/
+.horizontal-line{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: 19vh;
+  height: .5vh;
+  background-color: var(--lightblue);
+  position: absolute;
+  top: -.5vh;
+  left: -1vw;
+}
+
+.vertical-line{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: .5vh;
+  height: 0vh;
+  background-color: var(--lightblue);
+  position: absolute;
+  left: -1vw;
+  top: 2vh;
 }
 
 .container3{
