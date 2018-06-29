@@ -22,9 +22,7 @@ $('.scrollbarchild').click(function(){
   $(this).css("transition-delay", ".5s");
 });
 
-$('gradeimage').click(function(){
-  $(this).css("height","80vh");
-
+$('.gradeimage').click(function(){
 })
 
 /*scroll lockout on load in*/
@@ -87,22 +85,59 @@ window.onscroll = function() {
 }
 
 /*animate on scroll position*/
+
+
+var $output = $('#output')
+
+function amountscrolled(){
+	var winheight = $(window).height()
+	var resheight = $('.container2').height()
+	var scrollTop = $(window).scrollTop()
+	var trackLength = resheight - winheight
+	var pctScrolled = Math.floor(scrollTop/trackLength * 1000) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+	$output.html( 'Resume Section scrolled by : ' + pctScrolled +'%' )
+
+  $('.resumesmall').css({ 'opacity' : (-1 + pctScrolled/80) });
+  $('.resumebig').css({ 'opacity' : Math.min(-1 + pctScrolled/100, 0.25) });
+  $('.resumesmall').css({ 'left' : (0 + pctScrolled/2) });
+  $('.resumebig').css({ 'left' : (-80 + pctScrolled/5) });
+  $('.resumeheader').css({ 'opacity' : Math.min(-1 + pctScrolled/100, 1) });
+  $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(-42 + pctScrolled/6, 40) + "vh" });
+  $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-2 + pctScrolled/160) });
+  $('.languages,.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-110 + pctScrolled/5, 30) + "vh" });
+  $('.languagescontent,.sportscontent,.clubscontent').css({ 'opacity' : (-5 + pctScrolled/113) });
+  $('.questmoveright').css({'left' : Math.min(40 + pctScrolled/80, 55) + "vw" });
+  $('.questmoveleft').css({'left' : Math.min(40 - pctScrolled/80, 35) + "vw" });
+  $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-200 + pctScrolled/5, 36) + "vh" });
+  $('.ninthcontent,.tenthcontent,.eleventhcontent,.imageicon').css({ 'opacity' : (-11 + pctScrolled/100) });
+}
+
+$(window).on("scroll", function(){
+	amountscrolled()
+})
+
+  /*
 $(window).on('scroll', function() {
-  if ($(this).scrollTop() > 1200) {
-    $('.abouttag').css('top', '0vh')
+  if ($(this).scrollTop() > 1100) {
+    $('.resumetag').css('top', '0vh')
   }
   else {
-    $('.abouttag').css('top', '-10vh')
+    $('.resumetag').css('top', '-10vh')
   }
 
    var st = $(this).scrollTop()- 200;
-   $('.aboutsmall').css({ 'opacity' : (0 + st/100) });
-   $('.aboutbig').css({ 'opacity' : (0 + st/1500) });
-   $('.aboutsmall').css({ 'left' : (0 + st/3) });
-   $('.aboutbig').css({ 'left' : (-80 + st/5) });
-   $('.aboutheader').css({ 'right' : Math.min(-250 + st/2,0) });
-   $('.education,.courses,.clubs').children('.vertical-line').css({ 'height' : Math.min(0 + st-600/2, 350) });
-   $('.educationcontent,.coursescontent,.clubscontent').css({ 'opacity' : (-5 + st/100) });
+   $('.resumesmall').css({ 'opacity' : (0 + st/100) });
+   $('.resumebig').css({ 'opacity' : (0 + st/1500) });
+   $('.resumesmall').css({ 'left' : (0 + st/3) });
+   $('.resumebig').css({ 'left' : (-80 + st/5) });
+   $('.resumeheader').css({ 'right' : Math.min(-250 + st/2,0) });
+   $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(0 + st-600/2, 350) });
+   $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-5 + st/100) });
+   $('.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-500 + st-600/2, 275) });
+   $('.sportscontent,.clubscontent').css({ 'opacity' : (-8.5 + st/100) });
    $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-950 + st-400/2, 300) });
    $('.ninthcontent,.tenthcontent,.eleventhcontent').css({ 'opacity' : (-13 + st/100) });
+
 });
+
+*/

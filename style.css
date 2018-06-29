@@ -94,7 +94,7 @@ html, body {
   height: 100%;
   background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /*portfolio plane*/
@@ -168,7 +168,7 @@ html, body {
     top: 0px;
     width: 100vw;
     height: 5vh;
-    z-index: 2;
+    z-index: 4;
     opacity: 1;
     transition: top 0.3s;
     transition-delay: .5s;
@@ -279,7 +279,7 @@ html, body {
 }
 
 /*first heading*/
-.about {
+.resume {
   font-family: var(--titlefont1);
   position: relative;
   left: 7vw;
@@ -288,7 +288,7 @@ html, body {
   color: var(--darkblue);
 }
 
-.aboutsmall {
+.resumesmall {
   position: relative;
   top: 3vh;
   left: -1vw;
@@ -296,7 +296,7 @@ html, body {
   z-index: 2;
 }
 
-.aboutbig {
+.resumebig {
   position: relative;
   top: -20vh;
   left: -4vw;
@@ -304,7 +304,7 @@ html, body {
   z-index: 2;
 }
 
-.abouttag{
+.resumetag{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
   background-color: var(--lightblue);
   position: fixed;
@@ -321,10 +321,10 @@ html, body {
   transition: top .3s;
 }
 
-/*about content*/
+/*resume content*/
 
-/*about header*/
-.aboutheader{
+/*resume header*/
+.resumeheader{
   float: right;
   position: relative;
   right: 1vw;
@@ -339,7 +339,7 @@ html, body {
 .headshot {
   border-radius: 50%;
   height: 17vh;
-  width: 6vw;
+  width: 13vh;
   z-index: 2;
 }
 
@@ -402,8 +402,8 @@ html, body {
   margin-bottom: .75vh;
 }
 
-/*clubs*/
-.clubs{
+/*skills*/
+.skills{
   font-family: var(--titlefont2);
   font-size: 10vh;
   color: var(--darkblue);
@@ -414,7 +414,7 @@ html, body {
   letter-spacing: -.2vw;
 }
 
-.clubscontent {
+.skillscontent {
   font-family: var(--bodyfont3);
   font-size: 3vh;
   color: var(--oceanblue);
@@ -424,18 +424,112 @@ html, body {
   position: relative;
 }
 
-.clubsheading {
-  font-size: 4vh;
+.skillsheading,.languagesheading {
+  font-size: 3vh;
 }
 
-.clubsbox {
+.clubsbox,.skillsbox,.languagesbox {
   font-size: 2vh;
   letter-spacing: 0vw;
   margin-left: 1vw;
   margin-top: .25vh;
   margin-bottom: .25vh;
-  font-family: var(--bodyfont2)
+  font-family: var(--bodyfont2);
+  width: 25vw;
 }
+
+/*languages*/
+.languages{
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 7vw;
+  top: 100vh;
+  letter-spacing: -.2vw;
+}
+
+.languagescontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+  width: 40vw;
+  position: relative;
+  padding-top: 1vh;
+}
+
+/*sports*/
+.sports {
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 40vw;
+  top: 100vh;
+  letter-spacing: -.2vw;
+}
+
+.sportscontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+}
+
+/*clubs*/
+.clubs{
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 70vw;
+  top: 100vh;
+  letter-spacing: -.2vw;
+}
+
+.clubscontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+  width: 40vw;
+  position: relative;
+  padding-top: 1vh;
+}
+
+/*contact*/
+.contact{
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 70vw;
+  top: 45vh;
+  letter-spacing: -.2vw;
+}
+
+.contactcontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+  width: 20vw;
+  position: relative;
+}
+
+.contactheading {
+  font-size: 4vh;
+}
+
 /*line animations*/
 .horizontal-line{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -449,7 +543,7 @@ html, body {
 
 .vertical-line{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  width: .5vh;
+  width: .3vh;
   height: 0vh;
   background-color: var(--lightblue);
   position: absolute;
@@ -457,7 +551,33 @@ html, body {
   top: 2vh;
 }
 
+.questbase{
+  position: relative;
+  left: 40vw;
+  width: 20vw;
+  top: 97vh;
+}
+
+.questmoveright {
+  position: relative;
+  left: 45vw;
+  width: 20vw;
+  top: 96.5vh;
+}
+
+.questmoveleft {
+  position: relative;
+  left: 45vw;
+  width: 20vw;
+  top: 96vh;
+}
+
 /*quest*/
+.quest {
+  position: absolute;
+  top: 45vh;
+}
+
 .questtitle{
   font-family:var(--titlefont1);
   color: var(--darkblue);
@@ -552,6 +672,18 @@ html, body {
   height: 40vh;
   width: 25vw;
   padding-top: 8vh;
+}
+
+.imageicon {
+  width: 5vh;
+  height: 5vh;
+  position: relative;
+  top: .8vh;
+}
+
+.imageicon:hover {
+  box-shadow: 3px 2px 5px var(--darkblue);
+  transition-duration: .3s;
 }
 
 .container3{
