@@ -667,18 +667,13 @@ html, body {
   padding-top: 1vh;
 }
 
-.gradeimage {
-  position: relative;
-  height: 40vh;
-  width: 25vw;
-  padding-top: 8vh;
-}
-
+/*quest images*/
 .imageicon {
   width: 5vh;
   height: 5vh;
   position: relative;
-  top: .8vh;
+  top: .725vh;
+  cursor: pointer;
 }
 
 .imageicon:hover {
@@ -686,6 +681,41 @@ html, body {
   transition-duration: .3s;
 }
 
+.gradeimage {
+  position: relative;
+  height: 90vh;
+  width: 60vw;
+  opacity: 1;
+  display: none;
+  z-index: 8;
+  left: 20vw;
+  top: 5vh;
+}
+
+.imageclose {
+  position: fixed;
+  top: 4vh;
+  right: 3vw;
+  z-index: 10;
+  font-size: 5vh;
+  letter-spacing: .01vw;
+  color: var(--lightbeige);
+  font-family: var(--bodyfont2);
+  cursor: pointer;
+}
+
+.imagewrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(3, 20, 36, .8);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+/**/
 .container3{
   width: 100vw;
   height: 120vh;
