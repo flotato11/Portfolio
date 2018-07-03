@@ -10,7 +10,13 @@
   <div id="navbar">
     <a href="#contact">contact</a>
     <a href="#work">work</a>
-    <a href="#resume">resume</a>
+    <div class="dropdown">
+      <button class="dropbtn"><span style="font-family: var(--bodyfont2)"><a href="#resume">resume</a></span></button>
+      <div class="dropdown-content">
+        <a style="float: none;" href="#quest">quest</a>
+        <a style="float: none;" href="#projects">projects</a>
+      </div>
+    </div>
     <a id="alexyan" href="index.html">ALEX YAN</a>
   </div>
 </div>
@@ -136,6 +142,7 @@
           <div class="horizontal-line questmoveright"></div>
           <div class="horizontal-line questmoveleft"></div>
         </div>
+        <div id="quest" class="questanchor"></div>
         <div class="questtitle">QUEST
           <div class="questdescription">Quest is a schoolwide program at Nueva that allows students to pursue and showcase their interests throughout four years of highschool. <br> By working with advisors and mentors, I crafted a personal in-depth exploration of various self-selected areas of evolving passion. </div>
         </div>
@@ -185,13 +192,14 @@
     <div class="container3">
 
       <div class="projects">
+        <div id="projects" class="projectsanchor"></div>
         <div class="projectstitle">PROJECTS</div>
         <div class="project1">
           <div class="project1header">
-            <div class="projectname"> flotato potato co. </div>
+            <div class="project1name"> flotato potato co. </div>
           </div>
           <div class="project1headertopic">
-            <div class="projecttopic"> graphic design </div>
+            <div class="project1topic"> graphic design </div>
           </div>
           <div class="project1imagewrapper">
           </div>
@@ -222,31 +230,92 @@
                 <img src="flotato4.jpeg" style="width:100%">
               </div>
 
-              <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+              <a class="prev1" onclick="plusSlides(-1, 0)">&#10094;</a>
+              <a class="next1" onclick="plusSlides(1, 0)">&#10095;</a>
             </div>
 
-          <!--  <p>Slideshow 2:</p>
-            <div class="slideshow-container">
-              <div class="mySlides2">
-                <img src="img_band_chicago.jpg" style="width:100%">
-              </div>
-
-              <div class="mySlides2">
-                <img src="img_band_la.jpg" style="width:100%">
-              </div>
-
-              <div class="mySlides2">
-                <img src="img_band_ny.jpg" style="width:100%">
-              </div>
-
-              <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-            </div>
-          -->
 
           </div>
         </div>
+
+        <div class="project2">
+          <div class="project2header">
+            <div class="project2name"> seeing things </div>
+          </div>
+          <div class="project2headertopic">
+            <div class="project2topic"> photography </div>
+          </div>
+          <div class="project2imagewrapper">
+          </div>
+          <div class="project2description">
+            <div class="seeingthings"> SERIES
+              <div style="left: 5.6vw;" class="horizontal-line"></div>
+              <div style="position: relative; left:15vw; top: -10.2vh;" class="vertical-line"></div>
+              <div class="seeingthingscontent">
+                <div style="font-size: 5vh;">(2016-2017)</div>
+                <div class="seeingthingsdescription">Crafted multiple photo albums with an evolving central theme, whether it be a technical or physical aspect. A few notable areas of focus include city life, leading lines, depth of field, and collage. This series of photographs is showcased on the photographer Mark Taylor's blog alongside other Nueva students. Scroll through the slideshow and click any photo series to be taken to its collection on seeingthings.club.</div>
+              </div>
+            </div>
+
+            <div class="slideshow-container2">
+              <div class="mySlides2">
+                <a href="http://www.seeingthings.club/2017/05/30/final-portfolio-3/" target="_blank">
+                  <img src="portfolio.jpg" style="width:100%">
+                </a>
+              </div>
+
+              <div class="mySlides2">
+                <a href="http://www.seeingthings.club/2016/09/19/in-the-city/" target="_blank">
+                  <img src="city.jpg" style="width:100%">
+                </a>
+              </div>
+
+              <div class="mySlides2">
+                <a href="http://www.seeingthings.club/2017/03/20/critique-2-dof/" target="_blank">
+                  <img src="dof.jpg" style="width:100%">
+                </a>
+              </div>
+
+              <div class="mySlides2">
+                <a href="http://www.seeingthings.club/2016/10/29/meme-x5/" target="_blank">
+                  <img src="meme.jpg" style="width:100%">
+                </a>
+              </div>
+
+              <a class="prev2" onclick="plusSlides(-1, 1)">&#10094;</a>
+              <a class="next2" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+                      <!--<div class="slideshow-container">
+                        <div class="mySlides2">
+                          <img src="img_band_chicago.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides2">
+                          <img src="img_band_la.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides2">
+                          <img src="img_band_ny.jpg" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                      </div>
+
+                      http://www.seeingthings.club/2016/09/19/in-the-city/
+                      http://www.seeingthings.club/2016/10/29/meme-x5/
+                      http://www.seeingthings.club/2017/03/20/critique-2-dof/
+                      http://www.seeingthings.club/2017/05/16/city-lines-alex/
+                      http://www.seeingthings.club/2017/05/30/final-portfolio-3/
+
+          -->
       </div>
 
     </div>

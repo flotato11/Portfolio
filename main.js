@@ -9,6 +9,10 @@ $(document).ready(function(){
   $('.introfadein').css("opacity", "1");
   $('.introfadein').css("transition-delay", "4s");
   $('.introfadein').css("transition-duration", "1s");
+
+  $('.dropdown-content').css({
+    'width': ($('.dropbtn').width())
+  })
   /*$('.plane').css("left", "-30vw");
   $('.plane').css("transition-delay", "4s");
   $('.plane').css("transition-duration", "25s");
@@ -148,12 +152,31 @@ function amountscrolled(){
   $('.ninthcontent,.tenthcontent,.eleventhcontent,.imageicon').css({ 'opacity' : (-14.8 + pctScrolled/100) });
 
   /*projects*/
+
+  /*project 1*/
+  $('.project1header').css({ 'left' : Math.min(-30 + pctScrolled/63, 5) + "vw"});
+  $('.project1header').css({ 'opacity' : (-10 + pctScrolled/180)});
+
+  $('.project1headertopic').css({ 'right' : Math.min(-30 + pctScrolled/53, 11) + "vw"});
+  $('.project1headertopic').css({ 'opacity' : (-10 + pctScrolled/180)});
+
+
   $('.flotato').children('.vertical-line').css({ 'height' : Math.min(-390 + pctScrolled/5, 58) + "vh" });
   $('.flotatocontent').css({ 'opacity' : (-21 + pctScrolled/101) });
 
+  /*project 2*/
+  $('.project2header').css({ 'left' : Math.max(65 - pctScrolled/63, 19) + "vw"});
+  $('.project2header').css({ 'opacity' : (-14 + pctScrolled/180)});
+
+  $('.project2headertopic').css({ 'left' : Math.min(-41 + pctScrolled/63, 5) + "vw"});
+  $('.project2headertopic').css({ 'opacity' : (-14 + pctScrolled/180)});
+
+  $('.seeingthings').children('.vertical-line').css({ 'height' : Math.min(-520 + pctScrolled/5, 58) + "vh" });
+  $('.seeingthingscontent').css({ 'opacity' : (-27 + pctScrolled/101) });
+
   if (pctScrolled > 2260) {
     $('.projectstitle').css('position', 'fixed');
-    $('.projectstitle').css('top', '112vh');
+    $('.projectstitle').css('top', '113vh');
     $('.projectstitle').css('transition-duration', '.5s');
   } else {
     $('.projectstitle').css('position', 'absolute');

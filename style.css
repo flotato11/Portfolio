@@ -205,6 +205,42 @@ html, body {
   transition-duration: .3s;
 }
 
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 2.4vh;
+    border: none;
+    outline: none;
+    color: var(--lightbeige);
+    letter-spacing: 1px;
+    background-color: inherit;
+    margin: 0;
+    z-index: 2;
+}
+
+.dropbtn {
+  position: relative;
+  top: -.1vh;
+  left: .33vw;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--darkblue);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 5vh;
+    margin-left: .75vw;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /*side scrollbar*/
 .scrollbar {
   position: fixed;
@@ -578,6 +614,11 @@ html, body {
   top: 45vh;
 }
 
+.questanchor {
+  position: absolute;
+  top: 90vh;
+}
+
 .questtitle{
   font-family:var(--titlefont1);
   color: var(--darkblue);
@@ -718,7 +759,7 @@ html, body {
 /*projects*/
 
 .projectstitle {
-  font-family:var(--titlefont1);
+  font-family:var(--bodyfont3);
   color: var(--darkblue);
   font-size: 10vh;
   width: 100vw;
@@ -729,14 +770,16 @@ html, body {
   letter-spacing: 1vw;
 }
 
-.projectsline {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  width: 1vw;
-  height: 5vh;
+.projectsanchor {
   position: absolute;
-  top: 10vh;
-  float: right;
-  background-color: var(--darkblue);
+  top: 1vh;
+}
+
+/*project 1, flotato*/
+.project1name {
+  font-family: var(--bodyfont3);
+  font-size: 10vh;
+  margin-right: 20vw;
 }
 
 .project1header {
@@ -752,17 +795,11 @@ html, body {
   z-index: 2;
 }
 
-.projectname {
-  font-family: var(--bodyfont1);
-  font-size: 10vh;
-  margin-right: 20vw;
-}
-
 .project1headertopic {
-  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
   background-color: var(--lightblue);
   height: 15vh;
-  width: 40vw;
+  width: 33vw;
   position: absolute;
   top: 10vh;
   right: 11vw;
@@ -771,7 +808,7 @@ html, body {
   z-index: 1;
 }
 
-.projecttopic {
+.project1topic {
   font-family: var(--bodyfont3);
   font-size: 3vh;
   margin-right: 1vw;
@@ -802,6 +839,81 @@ html, body {
   font-family: var(--bodyfont2);
 }
 
+/*project 2, seeing things*/
+
+.project2 {
+  top: 100vh;
+  position: absolute;
+}
+
+.project2header {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%);
+  background-color: var(--fadedred);
+  height: 15vh;
+  width: 70vw;
+  position: absolute;
+  top: 10vh;
+  left: 19vw;
+  text-align: center;
+  line-height: 15vh;
+  z-index: 2;
+}
+
+.project2name {
+  font-family: var(--bodyfont3);
+  font-size: 10vh;
+  margin-left: 28vw;
+}
+
+.project2headertopic {
+  clip-path: polygon(0 0, 45% 0, 100% 100%, 0 100%);
+  background-color: var(--lightblue);
+  height: 15vh;
+  width: 33vw;
+  position: absolute;
+  top: 10vh;
+  left: 5vw;
+  text-align: left;
+  line-height: 24vh;
+  z-index: 1;
+}
+
+.project2topic {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  margin-left: 1vw;
+}
+
+.seeingthings {
+  font-family: var(--titlefont2);
+  font-size: 10vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 73vw;
+  top: 32vh;
+  letter-spacing: -.2vw;
+  float: right;
+}
+
+.seeingthingscontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+  text-align: right;
+  position: absolute;
+  top: 12.5vh;
+  right: 0vw;
+}
+
+.seeingthingsdescription {
+  padding-top: 1vh;
+  width: 25vw;
+  font-family: var(--bodyfont2);
+}
+
 /*project image slideshow*/
 
 .mySlides1, .mySlides2 {
@@ -822,8 +934,18 @@ img {
   z-index: 3;
 }
 
+.slideshow-container2 {
+  width: 48vw;
+  height: 21vh;
+  position: absolute;
+  top: 31vh;
+  left: 6vw;
+  margin: auto;
+  z-index: 3;
+}
+
 /* Next & previous buttons */
-.prev, .next {
+.prev1, .next1 {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -838,13 +960,34 @@ img {
   user-select: none;
 }
 
+.prev2, .next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1vw;;
+  margin-top: 15vh;
+  color: var(--lightgrey);
+  font-weight: bold;
+  font-size: 4vh;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
 /* Position the "next button" to the right */
-.next {
+.next1,.next2 {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-.prev:hover, .next:hover {
+.prev1:hover, .next1:hover {
   background-color: var(--lightbeige);
+  color: var(--darkblue);
+}
+
+.prev2:hover, .next2:hover {
+  background-color: var(--lightbeige);
+  color: var(--darkblue);
 }
 
 /**/
