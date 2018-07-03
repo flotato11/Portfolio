@@ -66,13 +66,39 @@ $('.imageicon').click(function() {
 
 });
 
-
 $('.imageclose').click(function() {
   $('.imagewrapper').css('display', 'none');
   $('.imageclose').css('display', 'none');
   $('.ninthimage').css('display', 'none');
   $('.tenthimage').css('display', 'none');
   $('.eleventhimage').css('display', 'none');
+  $('.flotato1image').css('display', 'none');
+  $('.flotato2image').css('display', 'none');
+  $('.flotato3image').css('display', 'none');
+  $('.flotato4image').css('display', 'none');
+});
+
+$('.mySlides1').click(function() {
+  if ($(this).hasClass('flotato1')) {
+    $('.imagewrapper').css('display', 'block');
+    $('.flotato1image').css('display', 'block');
+    $('.imageclose').css('display', 'block');
+  }
+  if ($(this).hasClass('flotato2')) {
+    $('.imagewrapper').css('display', 'block');
+    $('.flotato2image').css('display', 'block');
+    $('.imageclose').css('display', 'block');
+  }
+  if ($(this).hasClass('flotato3')) {
+    $('.imagewrapper').css('display', 'block');
+    $('.flotato3image').css('display', 'block');
+    $('.imageclose').css('display', 'block');
+  }
+  if ($(this).hasClass('flotato4')) {
+    $('.imagewrapper').css('display', 'block');
+    $('.flotato4image').css('display', 'block');
+    $('.imageclose').css('display', 'block');
+  }
 });
 
 /*navbar scroll*/
@@ -98,47 +124,66 @@ function amountscrolled(){
 	var pctScrolled = Math.floor(scrollTop/trackLength * 1000) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
 	$output.html( 'Resume Section scrolled by : ' + pctScrolled +'%' )
 
-  $('.resumesmall').css({ 'opacity' : (-1 + pctScrolled/80) });
-  $('.resumebig').css({ 'opacity' : Math.min(-1 + pctScrolled/100, 0.25) });
-  $('.resumesmall').css({ 'left' : (0 + pctScrolled/2) });
-  $('.resumebig').css({ 'left' : (-80 + pctScrolled/5) });
-  $('.resumeheader').css({ 'opacity' : Math.min(-1 + pctScrolled/100, 1) });
-  $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(-42 + pctScrolled/6, 40) + "vh" });
-  $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-2 + pctScrolled/160) });
-  $('.languages,.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-110 + pctScrolled/5, 30) + "vh" });
-  $('.languagescontent,.sportscontent,.clubscontent').css({ 'opacity' : (-5 + pctScrolled/113) });
+  /*resume heading*/
+  $('.resumesmall').css({ 'opacity' : (-2 + pctScrolled/80) });
+  $('.resumebig').css({ 'opacity' : Math.min(-2 + pctScrolled/100, 0.25) });
+  $('.resumesmall').css({ 'left' : (0 + pctScrolled/3) });
+  $('.resumebig').css({ 'left' : (-80 + pctScrolled/6) });
+  $('.resumeheader').css({ 'opacity' : Math.min(-2 + pctScrolled/100, 1) });
+
+  /*education, courses, skills*/
+  $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(-63 + pctScrolled/6, 40) + "vh" });
+  $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-3 + pctScrolled/160) });
+
+  /*languages, sports, clubs*/
+  $('.languages,.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-152 + pctScrolled/5, 30) + "vh" });
+  $('.languagescontent,.sportscontent,.clubscontent').css({ 'opacity' : (-7 + pctScrolled/113) });
+
+  /*quest heading*/
   $('.questmoveright').css({'left' : Math.min(40 + pctScrolled/80, 55) + "vw" });
   $('.questmoveleft').css({'left' : Math.min(40 - pctScrolled/80, 35) + "vw" });
-  $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-200 + pctScrolled/5, 36) + "vh" });
-  $('.ninthcontent,.tenthcontent,.eleventhcontent,.imageicon').css({ 'opacity' : (-11 + pctScrolled/100) });
+
+  /*quest descriptions by grade*/
+  $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-276 + pctScrolled/5, 36) + "vh" });
+  $('.ninthcontent,.tenthcontent,.eleventhcontent,.imageicon').css({ 'opacity' : (-14.8 + pctScrolled/100) });
+
+  /*projects*/
+  $('.flotato').children('.vertical-line').css({ 'height' : Math.min(-390 + pctScrolled/5, 58) + "vh" });
+  $('.flotatocontent').css({ 'opacity' : (-21 + pctScrolled/101) });
+
+  if (pctScrolled > 2260) {
+    $('.projectstitle').css('position', 'fixed');
+    $('.projectstitle').css('top', '112vh');
+    $('.projectstitle').css('transition-duration', '.5s');
+  } else {
+    $('.projectstitle').css('position', 'absolute');
+    $('.projectstitle').css('top', '115vh');
+    $('.projectstitle').css('transition-duration', '.5s');
+  }
+
 }
 
+/*slideshow*/
 $(window).on("scroll", function(){
 	amountscrolled()
 })
 
-  /*
-$(window).on('scroll', function() {
-  if ($(this).scrollTop() > 1100) {
-    $('.resumetag').css('top', '0vh')
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
   }
-  else {
-    $('.resumetag').css('top', '-10vh')
-  }
-
-   var st = $(this).scrollTop()- 200;
-   $('.resumesmall').css({ 'opacity' : (0 + st/100) });
-   $('.resumebig').css({ 'opacity' : (0 + st/1500) });
-   $('.resumesmall').css({ 'left' : (0 + st/3) });
-   $('.resumebig').css({ 'left' : (-80 + st/5) });
-   $('.resumeheader').css({ 'right' : Math.min(-250 + st/2,0) });
-   $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(0 + st-600/2, 350) });
-   $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-5 + st/100) });
-   $('.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-500 + st-600/2, 275) });
-   $('.sportscontent,.clubscontent').css({ 'opacity' : (-8.5 + st/100) });
-   $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-950 + st-400/2, 300) });
-   $('.ninthcontent,.tenthcontent,.eleventhcontent').css({ 'opacity' : (-13 + st/100) });
-
-});
-
-*/
+  x[slideIndex[no]-1].style.display = "block";
+}
