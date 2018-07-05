@@ -2,27 +2,27 @@
 /*fonts*/
 @font-face {
   font-family: "Lemon Milk";
-  src: url(LemonMilk.otf);
+  src: url(fonts/LemonMilk.otf);
 }
 
 @font-face {
   font-family: "Caviar Dreams";
-  src: url(CaviarDreams.ttf);
+  src: url(fonts/CaviarDreams.ttf);
 }
 
 @font-face {
   font-family: "Caviar Dreams Bold";
-  src: url(CaviarDreamsBold.ttf);
+  src: url(fonts/CaviarDreamsBold.ttf);
 }
 
 @font-face {
   font-family: "Proxima Nova Regular";
-  src: url(ProximaNovaRegular.ttf);
+  src: url(fonts/ProximaNovaRegular.ttf);
 }
 
 @font-face {
   font-family: "Proxima Nova Light";
-  src: url(ProximaNovaLight.ttf);
+  src: url(fonts/ProximaNovaLight.ttf);
 }
 
 /*animations*/
@@ -75,13 +75,15 @@
 
 /*root colors and fonts*/
 :root {
-  --fadedred: #CF6766;
+  --fadedred: rgb(207,103,102,.6);
   --darkblue: #031424;
   --lightblue: #97AABD;
+  --transparentblue: rgb(151,170,189, .6);
   --lightbeige: #EEE2DC;
   --mediumbeige: #EDC7B7;
-  --lightgrey: #BAB2B5;
+  --lightgrey: #C5C6C7;
   --oceanblue: #0F6178;
+  --fadedpurple: rgb(162,133,181, .5);
   --titlefont1: "Lemon Milk";
   --titlefont2: "Caviar Dreams Bold";
   --bodyfont1: "Caviar Dreams";
@@ -95,6 +97,7 @@ html, body {
   background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
   margin: 0;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 /*portfolio plane*/
@@ -303,7 +306,7 @@ html, body {
 }
 
 /*heading style*/
-.headingstyle{
+.resumeheadingstyle{
   clip-path: polygon(0 0, 100% 0, 53% 100%, 0% 100%);
   background-color: var(--lightblue);
   width: 90vw;
@@ -758,6 +761,13 @@ html, body {
 
 /*projects*/
 
+.container3{
+  width: 100vw;
+  height: 320vh;
+  position: absolute;
+  top: 240vh;
+  background-color: var(--mediumbeige);
+}
 .projectstitle {
   font-family:var(--bodyfont3);
   color: var(--darkblue);
@@ -797,7 +807,7 @@ html, body {
 
 .project1headertopic {
   clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
-  background-color: var(--lightblue);
+  background-color: var(--transparentblue);
   height: 15vh;
   width: 33vw;
   position: absolute;
@@ -867,7 +877,7 @@ html, body {
 
 .project2headertopic {
   clip-path: polygon(0 0, 45% 0, 100% 100%, 0 100%);
-  background-color: var(--lightblue);
+  background-color: var(--transparentblue);
   height: 15vh;
   width: 33vw;
   position: absolute;
@@ -886,14 +896,15 @@ html, body {
 
 .seeingthings {
   font-family: var(--titlefont2);
-  font-size: 10vh;
+  font-size: 8vh;
   color: var(--darkblue);
   z-index: 0;
   position: absolute;
-  left: 73vw;
+  left: 64vw;
   top: 32vh;
   letter-spacing: -.2vw;
   float: right;
+  width: 30vw;
 }
 
 .seeingthingscontent {
@@ -905,7 +916,7 @@ html, body {
   text-align: right;
   position: absolute;
   top: 12.5vh;
-  right: 0vw;
+  right: 7vw;
 }
 
 .seeingthingsdescription {
@@ -914,11 +925,83 @@ html, body {
   font-family: var(--bodyfont2);
 }
 
+/*project3, microbio*/
+.project3 {
+  position: absolute;
+  top: 200vh;
+}
+
+.project3name {
+  font-family: var(--bodyfont3);
+  font-size: 10vh;
+  margin-right: 20vw;
+}
+
+.project3header {
+  clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
+  background-color: var(--fadedred);
+  height: 15vh;
+  width: 70vw;
+  position: absolute;
+  top: 10vh;
+  left: 5vw;
+  text-align: center;
+  line-height: 15vh;
+  z-index: 2;
+}
+
+.project3headertopic {
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
+  background-color: var(--transparentblue);
+  height: 15vh;
+  width: 33vw;
+  position: absolute;
+  top: 10vh;
+  left: 56vw;
+  text-align: right;
+  line-height: 24vh;
+  z-index: 4;
+}
+
+.project3topic {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  margin-right: 1vw;
+}
+
+.microbio {
+  font-family: var(--titlefont2);
+  font-size: 9vh;
+  color: var(--darkblue);
+  z-index: 0;
+  position: absolute;
+  left: 7vw;
+  top: 32vh;
+  padding-top: .5vh;
+  letter-spacing: -.2vw;
+  width: 50vw;
+}
+
+.microbiocontent {
+  font-family: var(--bodyfont3);
+  font-size: 3vh;
+  color: var(--oceanblue);
+  letter-spacing: 0vw;
+  opacity: 0;
+}
+
+.microbiodescription {
+  padding-top: 1vh;
+  width: 40vw;
+  font-family: var(--bodyfont2);
+}
+
 /*project image slideshow*/
 
-.mySlides1, .mySlides2 {
+.mySlides1, .mySlides2, .mySlides3 {
   display: none
 }
+
 
 img {
   vertical-align: middle;
@@ -940,6 +1023,15 @@ img {
   position: absolute;
   top: 31vh;
   left: 6vw;
+  margin: auto;
+  z-index: 3;
+}
+
+.slideshow-container3 {
+  width: 22.5vw;
+  position: absolute;
+  top: 31vh;
+  left: 60vw;
   margin: auto;
   z-index: 3;
 }
@@ -990,11 +1082,49 @@ img {
   color: var(--darkblue);
 }
 
-/**/
-.container3{
+/*work*/
+
+.container4 {
   width: 100vw;
-  height: 240vh;
+  height: 320vh;
   position: absolute;
-  top: 240vh;
-  background-color: var(--mediumbeige);
+  top: 550vh;
+  background-color: var(--lightgrey);
+}
+
+.workheadingstyle{
+  clip-path: polygon(0 0, 100% 0, 53% 100%, 0% 100%);
+  background-color: var(--fadedpurple);
+  width: 90vw;
+  height: 40vh;
+  position: absolute;
+  top: 0vh;
+  left: -7vw;
+  z-index: 1;
+}
+
+/*first heading*/
+.work {
+  font-family: var(--titlefont1);
+  position: relative;
+  left: 7vw;
+  height: 10vh;
+  padding-top: 12vh;
+  color: var(--darkblue);
+}
+
+.worksmall {
+  position: relative;
+  top: 3vh;
+  left: -1vw;
+  font-size: 10vh;
+  z-index: 2;
+}
+
+.workbig {
+  position: relative;
+  top: -20vh;
+  left: -4vw;
+  font-size: 18vh;
+  z-index: 2;
 }
