@@ -10,8 +10,12 @@ $(document).ready(function(){
   $('.introfadein').css("transition-delay", "4s");
   $('.introfadein').css("transition-duration", "1s");
 
-  $('.dropdown-content').css({
+  $('.dropdowncontent').css({
     'width': ($('.dropbtn').width())
+  })
+
+  $('.dropdowncontent2').css({
+    'width': ($('.dropbtn2').width())
   })
   /*$('.plane').css("left", "-30vw");
   $('.plane').css("transition-delay", "4s");
@@ -152,93 +156,230 @@ window.onscroll = function() {
 }
 
 /*animate on scroll position*/
-var $output = $('#output')
+var $c2d = $('#c2d')
+var $c3d = $('#c3d')
+var $c4d = $('#c4d')
+var $c5d = $('#c5d')
+var $c6d = $('#c6d')
+
 
 function amountscrolled(){
-	var winheight = $(window).height()
-	var resheight = $('.container2').height()
-	var scrollTop = $(window).scrollTop()
-	var trackLength = resheight - winheight
-	var pctScrolled = Math.floor(scrollTop/trackLength * 1000) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-	$output.html( 'Resume Section scrolled by : ' + pctScrolled +'%' )
 
-  /*resume heading*/
-  $('.resumesmall').css({ 'opacity' : (-2 + pctScrolled/80) });
-  $('.resumebig').css({ 'opacity' : Math.min(-2 + pctScrolled/100, 0.25) });
-  $('.resumesmall').css({ 'left' : (0 + pctScrolled/3) });
-  $('.resumebig').css({ 'left' : (-80 + pctScrolled/6) });
-  $('.resumeheader').css({ 'opacity' : Math.min(-2 + pctScrolled/100, 1) });
+  var c1h = $('.container1').height() /*opening scene*/
+  var c2h = $('.container2').height() /*resume*/
+  var c3h = $('.container3').height() /*projects*/
+  var c4h = $('.container4').height() /*work*/
+  var c5h = $('.container5').height() /*volunteer*/
+  var c6h = $('.container6').height() /*internships*/
+  var winh = $(window).height() /*window*/
+  var scrollTop = $(window).scrollTop()
+
+  /*height of previous containers added up*/
+  var c2p = c1h
+  var c3p = c1h + c2h
+  var c4p = c1h + c2h + c3h
+  var c5p = c1h + c2h + c3h + c4h
+  var c6p = c1h + c2h + c3h + c4h + c5h
+
+  /*scroll w/ window height*/
+  var c2l = c2h - winh
+  var c3l = c3h - winh
+  var c4l = c4h - winh
+  var c5l = c5h - winh
+  var c6l = c6h - winh
+
+  /*scroll number*/
+  var c2s = Math.floor((scrollTop-c2p)/(c2l) * 1000) + 915
+  var c3s = Math.floor((scrollTop-c3p)/(c3l) * 1000) + 915
+  var c4s = Math.floor((scrollTop-c4p)/(c4l) * 1000) + 915
+  var c5s = Math.floor((scrollTop-c5p)/(c5l) * 1000) + 915
+  var c6s = Math.floor((scrollTop-c6p)/(c6l) * 1000) + 915
+
+  /*display*/
+  $c2d.html('C2 scrolled by : ' + c2s + '%')
+  $c3d.html('C3 scrolled by : ' + c3s + '%')
+  $c4d.html('C4 scrolled by : ' + c4s + '%')
+  $c5d.html('C5 scrolled by : ' + c5s + '%')
+  $c6d.html('C6 scrolled by : ' + c6s + '%')
+
+  /*resume [c2]*/
+
+  /*resume heading */
+  $('.resumesmall').css({ 'opacity' : (-1 + c2s/400) });
+  $('.resumebig').css({ 'opacity' : Math.min(-1 + c2s/400, 0.25) });
+  $('.resumesmall').css({ 'left' : (-100 + c2s/3) });
+  $('.resumebig').css({ 'left' : (-160 + c2s/6) });
+  $('.resumeheader').css({ 'opacity' : Math.min(-1 + c2s/400) });
 
   /*education, courses, skills*/
-  $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(-63 + pctScrolled/6, 40) + "vh" });
-  $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-3 + pctScrolled/160) });
+  $('.education,.courses,.skills').children('.vertical-line').css({ 'height' : Math.min(-105 + c2s/6, 40) + "vh" });
+  $('.educationcontent,.coursescontent,.skillscontent').css({ 'opacity' : (-5 + c2s/150) });
 
   /*languages, sports, clubs*/
-  $('.languages,.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-152 + pctScrolled/5, 30) + "vh" });
-  $('.languagescontent,.sportscontent,.clubscontent').css({ 'opacity' : (-7 + pctScrolled/113) });
+  $('.languages,.sports,.clubs').children('.vertical-line').css({ 'height' : Math.min(-163 + c2s/6, 30) + "vh" });
+  $('.languagescontent,.sportscontent,.clubscontent').css({ 'opacity' : (-6.7 + c2s/150) });
 
   /*quest heading*/
-  $('.questmoveright').css({'left' : Math.min(40 + pctScrolled/80, 55) + "vw" });
-  $('.questmoveleft').css({'left' : Math.min(40 - pctScrolled/80, 35) + "vw" });
+  $('.questmoveright').css({'width' : Math.min(0 + c2s/50, 35) + "vw" });
+  $('.questmoveleft').css({'width' : Math.min(0 + c2s/50, 35) + "vw" });
+  $('.questmoveleft').css({'left' : Math.min(52 - c2s/50, 35) + "vw" });
 
   /*quest descriptions by grade*/
-  $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-276 + pctScrolled/5, 36) + "vh" });
-  $('.ninthcontent,.tenthcontent,.eleventhcontent,.imageicon').css({ 'opacity' : (-14.8 + pctScrolled/100) });
+  $('.ninth,.tenth,.eleventh').children('.vertical-line').css({ 'height' : Math.min(-270 + c2s/6, 36) + "vh" });
+  $('.ninthcontent,.tenthcontent,.eleventhcontent,.imageicon').css({ 'opacity' : (-11.1 + c2s/150) });
 
-  /*projects*/
+  /*projects [c3]*/
 
   /*project 1*/
-  $('.project1header').css({ 'left' : Math.min(-30 + pctScrolled/63, 5) + "vw"});
-  $('.project1header').css({ 'opacity' : (-10 + pctScrolled/180)});
+  $('.project1header').css({ 'left' : Math.min(-17 + c3s/40, 5) + "vw"});
+  $('.project1header').css({ 'opacity' : (-4 + c3s/170)});
 
-  $('.project1headertopic').css({ 'right' : Math.min(-30 + pctScrolled/53, 11) + "vw"});
-  $('.project1headertopic').css({ 'opacity' : (-10 + pctScrolled/180)});
+  $('.project1headertopic').css({ 'right' : Math.min(-13 + c3s/40, 11) + "vw"});
+  $('.project1headertopic').css({ 'opacity' : (-4 + c3s/170)});
 
-
-  $('.flotato').children('.vertical-line').css({ 'height' : Math.min(-390 + pctScrolled/5, 58) + "vh" });
-  $('.flotatocontent').css({ 'opacity' : (-21 + pctScrolled/101) });
+  $('.flotato').children('.vertical-line').css({ 'height' : Math.min(-180 + c3s/4, 58) + "vh" });
+  $('.flotatocontent').css({ 'opacity' : (-5.5 + c3s/150) });
 
   /*project 2*/
-  $('.project2header').css({ 'left' : Math.max(65 - pctScrolled/63, 19) + "vw"});
-  $('.project2header').css({ 'opacity' : (-14 + pctScrolled/180)});
+  $('.project2header').css({ 'left' : Math.max(54 - c3s/40, 19) + "vw"});
+  $('.project2header').css({ 'opacity' : (-6.8 + c3s/170)});
 
-  $('.project2headertopic').css({ 'left' : Math.min(-41 + pctScrolled/63, 5) + "vw"});
-  $('.project2headertopic').css({ 'opacity' : (-14 + pctScrolled/180)});
+  $('.project2headertopic').css({ 'left' : Math.min(-29 + c3s/40, 5) + "vw"});
+  $('.project2headertopic').css({ 'opacity' : (-6.8 + c3s/170)});
 
-  $('.seeingthings').children('.vertical-line').css({ 'height' : Math.min(-520 + pctScrolled/5, 58) + "vh" });
-  $('.seeingthingscontent').css({ 'opacity' : (-27 + pctScrolled/101) });
+  $('.seeingthings').children('.vertical-line').css({ 'height' : Math.min(-293 + c3s/4, 58) + "vh" });
+  $('.seeingthingscontent').css({ 'opacity' : (-8.2 + c3s/150) });
 
   /*project 3*/
-  $('.project3header').css({ 'left' : Math.min(-50 + pctScrolled/63, 5) + "vw"});
-  $('.project3header').css({ 'opacity' : (-17.5 + pctScrolled/180)});
+  $('.project3header').css({ 'left' : Math.min(-41 + c3s/40, 5) + "vw"});
+  $('.project3header').css({ 'opacity' : (-9.3 + c3s/170)});
 
-  $('.project3headertopic').css({ 'left' : Math.max(120 - pctScrolled/56, 56) + "vw"});
-  $('.project3headertopic').css({ 'opacity' : (-17.5 + pctScrolled/180)});
+  $('.project3headertopic').css({ 'left' : Math.max(102 - c3s/40, 56) + "vw"});
+  $('.project3headertopic').css({ 'opacity' : (-9.3 + c3s/170)});
 
-  $('.microbio').children('.vertical-line').css({ 'height' : Math.min(-655 + pctScrolled/5, 50) + "vh" });
-  $('.microbiocontent').css({ 'opacity' : (-19 + pctScrolled/180) });
+  $('.microbio').children('.vertical-line').css({ 'height' : Math.min(-408 + c3s/4, 50) + "vh" });
+  $('.microbiocontent').css({ 'opacity' : (-11.5 + c3s/150) });
 
-
-  if ( 2260 <= pctScrolled) {
+  /*sticky project title*/
+  if (c3s >= 950 ) {
     $('.projectstitle').css('position', 'fixed');
-    $('.projectstitle').css('top', '113vh');
+    $('.projectstitle').css('top', '116vh');
     $('.projectstitle').css('transition-duration', '.5s');
   }
-  if (pctScrolled >= 3600){
+  if (c3s >= 1870){
     $('.projectstitle').css('position', 'absolute');
-    $('.projectstitle').css('top', '314vh');
+    $('.projectstitle').css('top', '316vh');
     $('.projectstitle').css('transition-duration', '0s');
   }
-  if (pctScrolled <= 3600){
+  if (c3s <= 1870){
     $('.projectstitle').css('position', 'fixed');
-    $('.projectstitle').css('top', '113vh');
+    $('.projectstitle').css('top', '116vh');
     $('.projectstitle').css('transition-duration', '0s');
   }
-  if (pctScrolled <= 2260){
+  if (c3s <= 950){
     $('.projectstitle').css('position', 'absolute');
-    $('.projectstitle').css('top', '115vh');
+    $('.projectstitle').css('top', '114vh');
     $('.projectstitle').css('transition-duration', '.5s');
   }
+
+  /*work [c5]*/
+
+  /*work heading*/
+  $('.worksmall').css({ 'opacity' : (-1.2 + c4s/400) });
+  $('.workbig').css({ 'opacity' : Math.min(-1.5 + c4s/400, 0.25) });
+  $('.worksmall').css({ 'left' : (-120 + c4s/3) });
+  $('.workbig').css({ 'left' : (-220 + c4s/6) });
+  $('.workheader').css({ 'opacity' : (-1.2 + c4s/400) });
+
+  $('.job1').children('.workverticalline').css({ 'height' : Math.min(-133 + c4s/5, 75) + "vh" });
+  $('.job1').children('.workhorizontalline').css({ 'width' : Math.min(-133 + c4s/5, 75) + "vw" });
+
+  $('.job2').children('.workverticalline').css({ 'height' : Math.min(-220 + c4s/5, 80) + "vh" });
+  $('.job2').children('.workhorizontalline').css({ 'width' : Math.min(-220 + c4s/5, 75) + "vw" });
+
+  $('.job3').children('.workverticalline').css({ 'height' : Math.min(-305 + c4s/5, 75) + "vh" });
+  $('.job3').children('.workhorizontalline').css({ 'width' : Math.min(-305 + c4s/5, 75) + "vw" });
+
+  /*sticky jobs title*/
+  if (c4s >= 1060) {
+    $('.jobstitle').css('position', 'fixed');
+    $('.jobstitle').css('top', '81vh');
+    $('.jobstitle').css('transition-duration', '0s');
+  }
+  if (c4s >= 1910) {
+    $('.jobstitle').css('position', 'absolute');
+    $('.jobstitle').css('top', '269vh');
+    $('.jobstitle').css('transition-duration', '0s');
+  }
+  if (c4s <= 1910) {
+    $('.jobstitle').css('position', 'fixed');
+    $('.jobstitle').css('top', '40vh');
+    $('.jobstitle').css('transition-duration', '0s');
+  }
+  if (c4s <= 1060) {
+    $('.jobstitle').css('position', 'absolute');
+    $('.jobstitle').css('top', '73vh');
+    $('.jobstitle').css('transition-duration', '0s');
+  }
+
+  /*volunteer [c5]*/
+
+  $('.volunteer1').children('.volunteerverticalline').css({ 'height' : Math.min(-105 + c5s/5, 75) + "vh" });
+  $('.volunteer1').children('.volunteerhorizontalline').css({ 'width' : Math.min(-105 + c5s/5, 75) + "vw" });
+
+  $('.volunteer2').children('.volunteerverticalline').css({ 'height' : Math.min(-201 + c5s/5, 75) + "vh" });
+  $('.volunteer2').children('.volunteerhorizontalline').css({ 'width' : Math.min(-200 + c5s/5, 75) + "vw" });
+
+  $('.volunteer3').children('.volunteerverticalline').css({ 'height' : Math.min(-296 + c5s/5, 75) + "vh" });
+  $('.volunteer3').children('.volunteerhorizontalline').css({ 'width' : Math.min(-293 + c5s/5, 75) + "vw" });
+
+  if (c5s >= 920) {
+    $('.volunteertitle').css('position', 'fixed');
+    $('.volunteertitle').css('top', '109vh');
+    $('.volunteertitle').css('transition-duration', '0s');
+  }
+  if (c5s >= 1890) {
+    $('.volunteertitle').css('position', 'absolute');
+    $('.volunteertitle').css('top', '319vh');
+    $('.volunteertitle').css('transition-duration', '0s');
+  }
+  if (c5s <= 1890) {
+    $('.volunteertitle').css('position', 'fixed');
+    $('.volunteertitle').css('top', '109vh');
+    $('.volunteertitle').css('transition-duration', '0s');
+  }
+  if (c5s <= 920) {
+    $('.volunteertitle').css('position', 'absolute');
+    $('.volunteertitle').css('top', '115vh');
+    $('.volunteertitle').css('transition-duration', '0s');
+  }
+
+  /*internships [c6]*/
+
+  $('.internship1').children('.internshipverticalline').css({ 'height' : Math.min(43 + c6s/25, 95) + "vh" });
+  $('.internship1').children('.internshiphorizontalline').css({ 'width' : Math.min(43 + c6s/25, 75) + "vw" });
+
+  if (c6s >= 920) {
+    $('.internshiptitle').css('position', 'fixed');
+    $('.internshiptitle').css('top', '45vh');
+    $('.internshiptitle').css('transition-duration', '0s');
+  }
+  if (c6s >= 1240) {
+    $('.internshiptitle').css('position', 'absolute');
+    $('.internshiptitle').css('top', '63vh');
+    $('.internshiptitle').css('transition-duration', '0s');
+  }
+  if (c6s <= 1240) {
+    $('.internshiptitle').css('position', 'fixed');
+    $('.internshiptitle').css('top', '45vh');
+    $('.internshiptitle').css('transition-duration', '0s');
+  }
+  if (c6s <= 920) {
+    $('.internshiptitle').css('position', 'absolute');
+    $('.internshiptitle').css('top', '50vh');
+    $('.internshiptitle').css('transition-duration', '0s');
+  }
+
 }
 
 $(window).on("scroll", function(){

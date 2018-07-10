@@ -84,6 +84,7 @@
   --lightgrey: #C5C6C7;
   --oceanblue: #0F6178;
   --fadedpurple: rgb(162,133,181, .5);
+  --darkpurple: rgb(37,39,77,.8);
   --titlefont1: "Lemon Milk";
   --titlefont2: "Caviar Dreams Bold";
   --bodyfont1: "Caviar Dreams";
@@ -208,12 +209,12 @@ html, body {
   transition-duration: .3s;
 }
 
-.dropdown {
+.dropdown, .dropdown2 {
     float: right;
     overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.dropdown .dropbtn, .dropdown2 .dropbtn2 {
     font-size: 2.4vh;
     border: none;
     outline: none;
@@ -224,13 +225,13 @@ html, body {
     z-index: 2;
 }
 
-.dropbtn {
+.dropbtn, .dropbtn2 {
   position: relative;
   top: -.1vh;
   left: .33vw;
 }
 
-.dropdown-content {
+.dropdowncontent, .dropdowncontent2 {
     display: none;
     position: absolute;
     background-color: var(--darkblue);
@@ -240,7 +241,7 @@ html, body {
     margin-left: .75vw;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdowncontent, .dropdown2:hover .dropdowncontent2{
     display: block;
 }
 
@@ -300,8 +301,7 @@ html, body {
   width: 100vw;
   height: 250vh;
   overflow: hidden;
-  position: static;
-  top: 130vh;
+  position: absolute;
   background-color: var(--lightbeige);
 }
 
@@ -399,7 +399,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
 }
 
 .blocktext{
@@ -426,7 +426,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 40vw;
   position: relative;
   padding-top: 1vh;
@@ -458,7 +458,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 20vw;
   position: relative;
 }
@@ -494,7 +494,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 40vw;
   position: relative;
   padding-top: 1vh;
@@ -517,7 +517,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
 }
 
 /*clubs*/
@@ -537,7 +537,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 40vw;
   position: relative;
   padding-top: 1vh;
@@ -560,7 +560,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 20vw;
   position: relative;
 }
@@ -590,26 +590,21 @@ html, body {
   top: 2vh;
 }
 
-.questbase{
-  position: relative;
-  left: 40vw;
-  width: 20vw;
-  top: 97vh;
-}
-
 .questmoveright {
-  position: relative;
-  left: 45vw;
+  position: absolute;
+  left: 50vw;
   width: 20vw;
   top: 96.5vh;
 }
 
 .questmoveleft {
-  position: relative;
-  left: 45vw;
+  position: absolute;
+  left: 30vw;
   width: 20vw;
-  top: 96vh;
+  top: 96.5vh;
 }
+
+
 
 /*quest*/
 .quest {
@@ -619,7 +614,7 @@ html, body {
 
 .questanchor {
   position: absolute;
-  top: 90vh;
+  top: 94vh;
 }
 
 .questtitle{
@@ -649,7 +644,7 @@ html, body {
   z-index: 0;
   position: absolute;
   left: 7vw;
-  top: 145vh;
+  top: 150vh;
   letter-spacing: -.2vw;
 }
 
@@ -658,7 +653,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
 }
 
 /*10th grade*/
@@ -669,7 +664,7 @@ html, body {
   z-index: 0;
   position: absolute;
   left: 37vw;
-  top: 145vh;
+  top: 150vh;
   letter-spacing: -.2vw;
 }
 
@@ -678,7 +673,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 30vw;
 }
 
@@ -690,7 +685,7 @@ html, body {
   z-index: 0;
   position: absolute;
   left: 71vw;
-  top: 145vh;
+  top: 150vh;
   letter-spacing: -.2vw;
 }
 
@@ -699,7 +694,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   width: 20vw;
   position: relative;
 }
@@ -761,13 +756,19 @@ html, body {
 
 /*projects*/
 
+.projects {
+  top: 10vh;
+  position: relative;
+}
+
 .container3{
   width: 100vw;
   height: 320vh;
   position: absolute;
-  top: 240vh;
+  top: 250vh;
   background-color: var(--mediumbeige);
 }
+
 .projectstitle {
   font-family:var(--bodyfont3);
   color: var(--darkblue);
@@ -778,11 +779,6 @@ html, body {
   position: absolute;
   transform: rotate(90deg);
   letter-spacing: 1vw;
-}
-
-.projectsanchor {
-  position: absolute;
-  top: 1vh;
 }
 
 /*project 1, flotato*/
@@ -840,7 +836,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
 }
 
 .flotatodescription {
@@ -904,6 +900,7 @@ html, body {
   top: 32vh;
   letter-spacing: -.2vw;
   float: right;
+  text-align right;
   width: 30vw;
 }
 
@@ -912,7 +909,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
   text-align: right;
   position: absolute;
   top: 12.5vh;
@@ -960,7 +957,7 @@ html, body {
   left: 56vw;
   text-align: right;
   line-height: 24vh;
-  z-index: 4;
+  z-index: 2;
 }
 
 .project3topic {
@@ -987,7 +984,7 @@ html, body {
   font-size: 3vh;
   color: var(--oceanblue);
   letter-spacing: 0vw;
-  opacity: 0;
+  opacity: 1;
 }
 
 .microbiodescription {
@@ -1086,24 +1083,23 @@ img {
 
 .container4 {
   width: 100vw;
-  height: 320vh;
+  height: 330vh;
   position: absolute;
-  top: 550vh;
+  top: 570vh;
   background-color: var(--lightgrey);
 }
 
 .workheadingstyle{
-  clip-path: polygon(0 0, 100% 0, 53% 100%, 0% 100%);
+  clip-path: polygon(0 0, 94% 0, 53% 100%, 0% 100%);
   background-color: var(--fadedpurple);
   width: 90vw;
-  height: 40vh;
+  height: 35vh;
   position: absolute;
   top: 0vh;
   left: -7vw;
   z-index: 1;
 }
 
-/*first heading*/
 .work {
   font-family: var(--titlefont1);
   position: relative;
@@ -1123,8 +1119,278 @@ img {
 
 .workbig {
   position: relative;
-  top: -20vh;
+  top: -17.9vh;
   left: -4vw;
-  font-size: 18vh;
+  font-size: 16vh;
   z-index: 2;
+}
+
+.workheader {
+  float: right;
+  text-align: right;
+  position: absolute;
+  right: 2vw;
+  top: 10vh;
+  font-family: var(--bodyfont3);
+  font-size: 6vh;
+  line-height: 8vh;
+  color: var(--darkblue);
+}
+
+/*jobs*/
+
+.jobstitle {
+  position: absolute;
+  transform: rotate(270deg);
+  font-family:var(--bodyfont3);
+  color: var(--darkblue);
+  font-size: 10vh;
+  top: 65vh;
+  left: -2vw;
+  letter-spacing: 1vw;
+}
+
+.job1 {
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  left: 15vw;
+  top: 40vh;
+}
+
+.job2 {
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  top: 140vh;
+  left: 15vw;
+}
+
+.job3 {
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  top: 240vh;
+  left: 15vw;
+}
+
+.workhorizontalline, .internshiphorizontalline{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: 75vw;
+  height: .5vh;
+  background-color: var(--darkpurple);
+  position: absolute;
+  top: 12vh;
+  left: -1vw;
+}
+
+.workverticalline, .internshipverticalline{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: .4vh;
+  height: 0vh;
+  background-color: var(--darkpurple);
+  position: absolute;
+  left: -1vw;
+  top: 2vh;
+}
+
+.worktitle {
+  font-size: 6vh;
+  padding-top: 1vh;
+}
+
+.workyear {
+  font-size: 4vh;
+}
+
+.workdescription {
+  font-family: var(--bodyfont2);
+  font-size: 3vh;
+  width: 20vw;
+  padding-top: 1vh;
+}
+
+/*volunteer*/
+
+.container5 {
+  position: absolute;
+  width: 100vw;
+  height: 310vh;
+  position: absolute;
+  top: 900vh;
+  background-color: var(--lightblue);
+}
+
+.volunteer {
+  position: relative;
+  top: -5vh;
+}
+
+.volunteertitle {
+  font-family:var(--bodyfont3);
+  color: var(--darkblue);
+  font-size: 10vh;
+  width: 100vw;
+  top: 120vh;
+  left: 44vw;
+  position: absolute;
+  transform: rotate(90deg);
+  letter-spacing: 1vw;
+}
+
+.volunteer1 {
+  float: right;
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  right: 14vw;
+  top: 20vh;
+}
+
+.volunteer2 {
+  float: right;
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  right: 14vw;
+  top: 120vh;
+}
+
+.volunteer3 {
+  float: right;
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  right: 14vw;
+  top: 220vh;
+}
+
+.volunteerhorizontalline{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: 75vw;
+  height: .5vh;
+  background-color: var(--darkpurple);
+  position: absolute;
+  top: 12vh;
+  right: -1vw;
+}
+
+.volunteerverticalline{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  width: .4vh;
+  height: 80vh;
+  background-color: var(--darkpurple);
+  position: absolute;
+  right: -1vw;
+  top: 2vh;
+}
+
+.volunteertype {
+  float: right;
+  font-size: 6vh;
+  padding-top: 1vh;
+}
+
+.volunteeryear {
+  font-size: 4vh;
+  float: right;
+  text-align: right;
+  position: absolute;
+  right: 0vw;
+  top: 21vh;
+}
+
+.volunteerdescription {
+  font-family: var(--bodyfont2);
+  font-size: 3vh;
+  width: 22.5vw;
+  padding-top: 1vh;
+  float: right;
+  text-align: right;
+  position: absolute;
+  top: 26vh;
+  right: 0vw;
+}
+
+.leatherbackimage,.monteverdeimage {
+  width: 45vw;
+  position: absolute;
+  right: 25vw;
+  top: 15vh;
+}
+
+/*internship*/
+
+.container6 {
+    position: absolute;
+    width: 100vw;
+    height: 140vh;
+    position: absolute;
+    top: 1210vh;
+    background-color: #defce9;
+}
+
+.internship {
+  position: relative;
+  top: -5vh;
+}
+
+.internshiptitle {
+  position: absolute;
+  transform: rotate(270deg);
+  font-family:var(--bodyfont3);
+  color: var(--darkblue);
+  font-size: 10vh;
+  top: 50vh;
+  left: -13vw;
+  letter-spacing: 1vw;
+}
+
+.internship1 {
+  font-family: var(--titlefont2);
+  color: var(--darkblue);
+  font-size: 10vh;
+  position: absolute;
+  left: 15vw;
+  top: 20vh;
+}
+
+.internshiptype {
+  font-size: 6vh;
+  padding-top: 1vh;
+}
+
+.internshipyear {
+  font-size: 4vh;
+}
+
+.internshipdescription {
+  font-family: var(--bodyfont2);
+  font-size: 3vh;
+  width: 20vw;
+  padding-top: 1vh;
+}
+
+.capitolimage {
+  width: 45vw;
+  position: absolute;
+  left: 27.5vw;
+  top: 30vh;
+}
+
+/*contact*/
+
+.container7 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 1350vh;
+  background-color: var(--lightbeige);
 }

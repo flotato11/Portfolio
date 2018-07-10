@@ -9,10 +9,17 @@
 <div class="introfadein">
   <div id="navbar">
     <a href="#contact">contact</a>
-    <a href="#work">work</a>
+    <div class="dropdown2">
+      <button style="margin-right: .45vw;" class="dropbtn2"><span style="font-family: var(--bodyfont2)"><a href="#work">experience</a></span></button>
+      <div class="dropdowncontent2">
+        <a style="float: none;" href="#experience">work</a>
+        <a style="float: none;" href="#volunteer">volunteer</a>
+        <a style="float: none;" href="#internships">internships</a>
+      </div>
+    </div>
     <div class="dropdown">
       <button class="dropbtn"><span style="font-family: var(--bodyfont2)"><a href="#resume">resume</a></span></button>
-      <div class="dropdown-content">
+      <div class="dropdowncontent">
         <a style="float: none;" href="#quest">quest</a>
         <a style="float: none;" href="#projects">projects</a>
       </div>
@@ -41,22 +48,27 @@
   </div>
 </div>
 
+<p id="c2d" style="position:fixed; right:0; bottom:0; padding:10px; font-weight:bold; z-index: 10;"> </p>
+<p id="c3d" style="position:fixed; right:0; bottom:0; padding:10px; padding-bottom: 30px; font-weight:bold; z-index: 10;"> </p>
+<p id="c4d" style="position:fixed; right:0; bottom:0; padding:10px; padding-bottom: 50px; font-weight:bold; z-index: 10;"> </p>
+<p id="c5d" style="position:fixed; right:0; bottom:0; padding:10px; padding-bottom: 70px; font-weight:bold; z-index: 10;"> </p>
+<p id="c6d" style="position:fixed; right:0; bottom:0; padding:10px; padding-bottom: 90px; font-weight:bold; z-index: 10;"> </p>
+
+
 <div class="main">
 
-  <div class="container2">
-    <div class="resume" id="resume">
+  <div id="resume" class="container2">
+    <div class="resume">
       <div class="resumeheadingstyle"></div>
       <div class="resumesmall">RESUME</div>
       <div class="resumebig">RESUME</div>
       <div class="resumetag">RESUME</div>
     </div>
 
-    <p id="output" style="position:fixed; right:0; bottom:0; padding:10px; font-weight:bold; z-index: 10;"> </p>
-
     <div class="resumeheader">
       <img class="headshot" src="images/alexyan.jpg"></img>
       <div>aspiring entrepreneur</div>
-      <div>passionate web and graphic designer</div>
+      <div>web and graphic designer</div>
       <div></div>
     </div>
 
@@ -139,13 +151,16 @@
 
       <div class="quest">
         <div class="questlines">
-          <div class="horizontal-line questbase"></div>
           <div class="horizontal-line questmoveright"></div>
-          <div class="horizontal-line questmoveleft"></div>
+            <div class="lineholder">
+              <div class="horizontal-line questmoveleft"></div>
+            </div>
         </div>
         <div id="quest" class="questanchor"></div>
         <div class="questtitle">QUEST
-          <div class="questdescription">Quest is a schoolwide program at Nueva that allows students to pursue and showcase their interests throughout four years of highschool. <br> By working with advisors and mentors, I crafted a personal in-depth exploration of various self-selected areas of evolving passion. </div>
+          <div class="questdescription">Quest is a schoolwide program at Nueva that allows students to pursue and showcase their interests throughout four years of highschool.
+            <br> By working with advisors and mentors, I crafted a personal in-depth exploration of various self-selected areas of evolving passion.
+            <br> Click the <img style="width: 2.5vw;"src="images/imageicon.png"></img> to see images. </div>
         </div>
           <div class="ninth"> 9th
             <img class="imageicon 1" src="images/imageicon.png"></img>
@@ -176,7 +191,7 @@
           </div>
           <div class="imagewrapper">
             <img style="width: 50vw; left: 25vw;" class="gradeimage ninthimage" src="images/ninth.jpg"></img>
-            <img style="width: 50vw; left: 25vw;" class="gradeimage tenthimage" src="images/tenth.jpg"></img>
+            <img style="width: 60vw; left: 20vw;" class="gradeimage tenthimage" src="images/tenth.jpg"></img>
             <img style="width: 70vw; left: 15vw;" class="gradeimage flotato1image" src="images/flotato1.jpeg"></img>
             <img style="width: 70vw; left: 15vw;" class="gradeimage flotato2image" src="images/flotato2.jpeg"></img>
             <img style="width: 70vw; left: 15vw;" class="gradeimage flotato3image" src="images/flotato3.jpeg"></img>
@@ -195,13 +210,10 @@
 
   </div>
 
-  <div class="container3">
+  <div id="projects" class="container3">
 
     <div class="projects">
-
-        <div id="projects" class="projectsanchor"></div>
         <div class="projectstitle">PROJECTS</div>
-
       <div class="project1">
         <div class="project1header">
           <div class="project1name"> flotato potato co. </div>
@@ -249,9 +261,9 @@
         <div class="project2imagewrapper">
         </div>
         <div class="project2description">
-          <div class="seeingthings"> PHOTO SERIES
+          <div class="seeingthings"> <div style="position: relative; right: 1vw;">PHOTO SERIES</div>
             <div style="left: 15.3vw;" class="horizontal-line"></div>
-            <div style="position: relative; left:24vw; top: -7.5vh;" class="vertical-line"></div>
+            <div style="position: absolute; left: 24.5vw; width: .4vh;" class="vertical-line"></div>
             <div class="seeingthingscontent">
               <div style="font-size: 5vh;">(2016-2017)</div>
               <div class="seeingthingsdescription">Crafted multiple photo albums with an evolving central theme; whether it be a technical or physical aspect. A few notable areas of focus include city life, leading lines, depth of field, and collage. This series of photographs is showcased on the photographer Mark Taylor's blog alongside other Nueva students. Scroll through the slideshow and click any photo series to be taken to its collection on seeingthings.club.</div>
@@ -328,12 +340,144 @@
 
   </div>
 
-  <div class="container4">
-    <div class="work" id="work">
+  <div id="experience" class="container4">
+    <div class="work">
       <div class="workheadingstyle"></div>
-      <div class="worksmall">WORK</div>
-      <div class="workbig">WORK</div>
+      <div class="worksmall">EXPERIENCE</div>
+      <div class="workbig">EXPERIENCE</div>
     </div>
+    <div class="workheader">
+      job experience
+      </br>
+      volunteer programs
+      </br>
+      <span style="margin-right: .8vw;">internships and shadowing</span>
+    </div>
+    <div class="jobstitle">WORK</div>
+    <div class="job1"> ASSISTANT TENNIS COACH
+      <div class="workhorizontalline"></div>
+      <div class="workverticalline"></div>
+      <div class="job1content">
+        <div class="worktitle">Zalles Tennis</div>
+        <div class="workyear">(2013-Present)</div>
+        <div class="workdescription">
+          <span style="font-family: var(--bodyfont3)">Job Responsability:</span> Coached young athletes of ages 6 to 14 on various aspects of tennis, from simple strength building drills to granular shot accuracy training. Worked to develop the player's consistency on strokes, footwork, and technique.
+          </br>
+          <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)"> Hours: </span> Saturdays (8am-12pm).</div>
+          </br>
+          <div><span style="font-family: var(--bodyfont3)"> Reference: </span> Head Coach Raul Cossio (650) 888-0278</div>
+        </div>
+       </div>
+    </div>
+    <div class="job2"> WEB DESIGN INSTRUCTOR
+      <div class="workhorizontalline"></div>
+      <div class="workverticalline"></div>
+      <div class="job2content">
+        <div class="worktitle">Local</div>
+        <div class="workyear">(2017-Present)</div>
+        <div class="workdescription">
+          <span style="font-family: var(--bodyfont3)">Job Responsability:</span> Worked with a handful of aspiring web-designers aged 10-12 to develop a proficient understanding of HTML, CSS, Javascript, and jQuery. Introduced basic graphic design concepts and helped students form a strong foundation.
+          </br>
+          <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)"> Hours: </span> Mondays, June-August. (7pm-9pm). Frequency Varies.</div>
+          </br>
+          <div><span style="font-family: var(--bodyfont3)"> Reference: </span> Peer Tutor Tom Shahar (650) 787-4681</div>
+        </div>
+       </div>
+    </div>
+    <div class="job3"> TENNIS CAMP INSTRUCTOR
+      <div class="workhorizontalline"></div>
+      <div class="workverticalline"></div>
+      <div class="job3content">
+        <div class="worktitle">Zalles Tennis</div>
+        <div class="workyear">(2015-Present)</div>
+        <div class="workdescription">
+          <span style="font-family: var(--bodyfont3)">Job Responsability:</span> Coached young athletes of ages 8 to 15 on developing an all-aroung game, strategy, footwork, and toughness. Match strategies and fitness are incorporated into games and drills to ready players for USTA tournaments.
+          </br>
+          <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)"> Hours: </span> Weekdays, June-August. (9am-1pm). Frequency Varies.  </div>
+          </br>
+          <div><span style="font-family: var(--bodyfont3)"> Reference: </span> Head Coach Raul Cossio (650) 888-0278</div>
+        </div>
+       </div>
+    </div>
+  </div>
+
+  <div id="volunteer" class="container5">
+    <div class="volunteer">
+      <div class="volunteertitle">VOLUNTEER</div>
+      <div class="volunteer1"> THE LEATHERBACK TRUST
+        <div class="volunteerhorizontalline"></div>
+        <div class="volunteerverticalline"></div>
+        <div class="volunteer1content">
+          <div class="volunteertype">Animal Welfare</div>
+          <div class="volunteeryear">(2017)</div>
+          <div class="volunteerdescription">
+            <span style="font-family: var(--bodyfont3)">Organization:</span> The Leatherback Trust is dedicated to saving the leatherback sea turtle and promote sea turtle conservation.
+            </br>
+            <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)">Responsibility:</span> Rescued and helped build nests for the endangered baby leatherback sea turtles in Costa Rica. Patrolled the shores of Playa Grande at night and moved turtle nests to a hatchery at the research station.</div>
+            </br>
+            <div><span style="font-family: var(--bodyfont3); ">Hours:</span> February-March</div>
+          </div>
+        </div>
+        <img class="leatherbackimage" src="images/leatherback.jpg"></img>
+      </div>
+      <div class="volunteer2"> MONTEVERDE INSTITUTE
+        <div class="volunteerhorizontalline"></div>
+        <div class="volunteerverticalline"></div>
+        <div class="volunteer2content">
+          <div class="volunteertype">Environment</div>
+          <div class="volunteeryear">(2017)</div>
+          <div class="volunteerdescription">
+            <span style="font-family: var(--bodyfont3)">Organization:</span> The Monteverde Research Institute works advance sustainable living through “place-based” education, community engagement, and applied research.
+            </br>
+            <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)">Responsibility:</span> Helped with reforestation in Costa Rica through calculations on CO2 intake, water quality, and biodiversity. Recorded my findings in the institute's database for future use. </div>
+            </br>
+            <div><span style="font-family: var(--bodyfont3); ">Hours:</span> March</div>
+          </div>
+        </div>
+        <img class="monteverdeimage" src="images/monteverde.jpg"></img>
+      </div>
+      <div class="volunteer3"> SECOND HARVEST FOOD BANK
+        <div class="volunteerhorizontalline"></div>
+        <div class="volunteerverticalline"></div>
+        <div class="volunteer3content">
+          <div class="volunteertype">Social Services</div>
+          <div class="volunteeryear">(2017-2018)</div>
+          <div class="volunteerdescription">
+            <span style="font-family: var(--bodyfont3)">Organization:</span> The Second Harvest Food Bank of Santa Clara and San Mateo Counties provides fresh produce to families in need, serving more than a quarter million people each month.
+            </br>
+            <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)">Responsibility:</span> Helped pack and sort produce for distribution in the San Mateo County </div>
+            </br>
+            <div><span style="font-family: var(--bodyfont3); ">Hours:</span> Tuesday Mornings, Monthly (9am-12pm) </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="internships" class="container6">
+    <div class="internship">
+      <div class="internshiptitle">INTERNSHIPS</div>
+      <div class="internship1"> CALIFORNIA STATE CAPITOL
+        <div class="internshiphorizontalline"></div>
+        <div class="internshipverticalline"></div>
+        <div class="internship1content">
+          <div class="internshiptype">Personal Assistant to Elle Chen </br> <span style="font-size: 4vh; position: relative; top: -2.3vh;">Legislative Aide and Consultant on Public Safety to Senator Skinner</span></div>
+          <div style="position: relative; top: -2vh;" class="internshipyear">(2018)</div>
+          <div style="position: relative; top: -2vh;" class="internshipdescription">
+            <span style="font-family: var(--bodyfont3)">Responsability:</span> Spent a week at the Sacramento Capitol Building with Ms. Chen to learn about public policy and the structure of government at a state level. Assisted her with various tasks, such as recording important material from commitee hearings and editing legislative fact sheets with talking points. Aided with cross-office communications and office management.
+            </br>
+            <div style="padding-top: 3vh;"><span style="font-family: var(--bodyfont3)"> Hours: </span> June 25 - July 2nd</div>
+            </br>
+            <div><span style="font-family: var(--bodyfont3)"> Reference: </span> Elle Chen </br> (650) 931-5589 </div>
+          </div>
+          <img class="capitolimage" src="images/capitol.jpg"></img>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="container7">
+    <>
   </div>
 
 </div>
