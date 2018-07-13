@@ -17,21 +17,7 @@ $(document).ready(function(){
   $('.dropdowncontent2').css({
     'width': ($('.dropbtn2').width())
   })
-  /*$('.plane').css("left", "-30vw");
-  $('.plane').css("transition-delay", "4s");
-  $('.plane').css("transition-duration", "25s");
-  $('.plane').css("transition-timing-function", "linear");*/
 });
-
-$('.scrollbarchild').click(function(){
-  $('.scrollbarchild').css("background-color","var(--darkblue)")
-  $(this).css("background-color","var(--lightgrey)")
-  $(this).css("transition-duration", ".5s");
-  $(this).css("transition-delay", ".5s");
-});
-
-$('.gradeimage').click(function(){
-})
 
 /*scroll lockout on load in*/
 function scrollWork() {
@@ -53,6 +39,20 @@ $('a[href^="#"]').on('click', function(event) {
             scrollTop: target.offset().top
         }, 1000);
     }
+});
+
+$('.contactbutton').click(function() {
+  if ($(this).hasClass('showContact')) {
+    console.log('bi')
+    $('.contact').css('left', '85vw');
+    $(this).removeClass('showContact');
+    $(this).addClass('hideContact');
+  }
+  else if ($(this).hasClass('hideContact')) {
+    $('.contact').css('left', '100vw');
+    $(this).removeClass('hideContact');
+    $(this).addClass('showContact');
+  }
 });
 
 $('.imageicon').click(function() {
@@ -297,7 +297,7 @@ function amountscrolled(){
   $('.job2').children('.workverticalline').css({ 'height' : Math.min(-220 + c4s/5, 80) + "vh" });
   $('.job2').children('.workhorizontalline').css({ 'width' : Math.min(-220 + c4s/5, 75) + "vw" });
 
-  $('.job3').children('.workverticalline').css({ 'height' : Math.min(-305 + c4s/5, 75) + "vh" });
+  $('.job3').children('.workverticalline').css({ 'height' : Math.min(-305 + c4s/5, 80) + "vh" });
   $('.job3').children('.workhorizontalline').css({ 'width' : Math.min(-305 + c4s/5, 75) + "vw" });
 
   /*sticky jobs title*/
@@ -327,7 +327,7 @@ function amountscrolled(){
   $('.volunteer1').children('.volunteerverticalline').css({ 'height' : Math.min(-105 + c5s/5, 75) + "vh" });
   $('.volunteer1').children('.volunteerhorizontalline').css({ 'width' : Math.min(-105 + c5s/5, 75) + "vw" });
 
-  $('.volunteer2').children('.volunteerverticalline').css({ 'height' : Math.min(-201 + c5s/5, 75) + "vh" });
+  $('.volunteer2').children('.volunteerverticalline').css({ 'height' : Math.min(-201 + c5s/5, 80) + "vh" });
   $('.volunteer2').children('.volunteerhorizontalline').css({ 'width' : Math.min(-200 + c5s/5, 75) + "vw" });
 
   $('.volunteer3').children('.volunteerverticalline').css({ 'height' : Math.min(-296 + c5s/5, 75) + "vh" });

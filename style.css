@@ -75,16 +75,16 @@
 
 /*root colors and fonts*/
 :root {
-  --fadedred: rgb(207,103,102,.6);
+  --fadedred: rgba(207,103,102,.6);
   --darkblue: #031424;
   --lightblue: #97AABD;
-  --transparentblue: rgb(151,170,189, .6);
+  --transparentblue: rgba(151,170,189, .6);
   --lightbeige: #EEE2DC;
   --mediumbeige: #EDC7B7;
   --lightgrey: #C5C6C7;
   --oceanblue: #0F6178;
-  --fadedpurple: rgb(162,133,181, .5);
-  --darkpurple: rgb(37,39,77,.8);
+  --fadedpurple: rgba(162,133,181, .5);
+  --darkpurple: rgba(37,39,77,.8);
   --titlefont1: "Lemon Milk";
   --titlefont2: "Caviar Dreams Bold";
   --bodyfont1: "Caviar Dreams";
@@ -245,25 +245,6 @@ html, body {
     display: block;
 }
 
-/*side scrollbar*/
-.scrollbar {
-  position: fixed;
-  top: 50%;
-  margin-top: -15vh;
-  right: 0;
-  opacity: 0;
-  z-index: 5;
-}
-
-.scrollbarchild {
-  height: 2vh;
-  width: 2vh;
-  border-radius: 50%;
-  position: relative;
-  background-color: var(--darkblue);
-  margin: 2vh;
-}
-
 /*scroll down button*/
 .wrapper {
   width: 100vw;
@@ -284,9 +265,54 @@ html, body {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
   -webkit-clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
+  clip-path: polygon(50% 55%, 100% 20%, 100% 50%, 50% 85%, 0% 50%, 0 20%);
   background-color: var(--darkblue);
+}
+
+/*passion fade ins*/
+.passions {
+  font-family: var(--bodyfont3);
+  font-size: 2vh;
+  color: var(--darkblue);
+}
+
+.pmain1 {
+  position: absolute;
+  top: 40vh;
+  left: 70vw;
+}
+
+
+/*contact*/
+.contact {
+  position: fixed;
+  width: 15vw;
+  height: 95vh;
+  left: 100vw;
+  top: 5vh;
+  background-color: var(--darkblue);
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+  z-index: 10;
+}
+
+.contactcontent {
+  font-family: var(--bodyfont2);
+  font-size: 2.5vh;
+  color: var(--lightbeige);
+  margin-top: 2.5vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  width: 15vw;
+}
+
+.contactlink:hover {
+  color: blue;
+}
+
+.contactbutton{
+  cursor: pointer;
 }
 
 /*content containers*/
@@ -307,6 +333,7 @@ html, body {
 
 /*heading style*/
 .resumeheadingstyle{
+  -webkit-clip-path: polygon(0 0, 100% 0, 53% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 53% 100%, 0% 100%);
   background-color: var(--lightblue);
   width: 90vw;
@@ -344,6 +371,7 @@ html, body {
 }
 
 .resumetag{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
   background-color: var(--lightblue);
   position: fixed;
@@ -543,34 +571,9 @@ html, body {
   padding-top: 1vh;
 }
 
-/*contact*/
-.contact{
-  font-family: var(--titlefont2);
-  font-size: 10vh;
-  color: var(--darkblue);
-  z-index: 0;
-  position: absolute;
-  left: 70vw;
-  top: 45vh;
-  letter-spacing: -.2vw;
-}
-
-.contactcontent {
-  font-family: var(--bodyfont3);
-  font-size: 3vh;
-  color: var(--oceanblue);
-  letter-spacing: 0vw;
-  opacity: 1;
-  width: 20vw;
-  position: relative;
-}
-
-.contactheading {
-  font-size: 4vh;
-}
-
 /*line animations*/
 .horizontal-line{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: 19vh;
   height: .5vh;
@@ -581,6 +584,7 @@ html, body {
 }
 
 .vertical-line{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: .3vh;
   height: 0vh;
@@ -789,6 +793,7 @@ html, body {
 }
 
 .project1header {
+  -webkit-clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
   background-color: var(--fadedred);
   height: 15vh;
@@ -802,6 +807,7 @@ html, body {
 }
 
 .project1headertopic {
+  -webkit-clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
   background-color: var(--transparentblue);
   height: 15vh;
@@ -853,6 +859,7 @@ html, body {
 }
 
 .project2header {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%);
   background-color: var(--fadedred);
   height: 15vh;
@@ -872,6 +879,7 @@ html, body {
 }
 
 .project2headertopic {
+  -webkit-clip-path: polygon(0 0, 45% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 45% 0, 100% 100%, 0 100%);
   background-color: var(--transparentblue);
   height: 15vh;
@@ -896,7 +904,7 @@ html, body {
   color: var(--darkblue);
   z-index: 0;
   position: absolute;
-  left: 64vw;
+  right: -20vw;
   top: 32vh;
   letter-spacing: -.2vw;
   float: right;
@@ -935,6 +943,7 @@ html, body {
 }
 
 .project3header {
+  -webkit-clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 74% 100%, 0% 100%);
   background-color: var(--fadedred);
   height: 15vh;
@@ -948,6 +957,7 @@ html, body {
 }
 
 .project3headertopic {
+  -webkit-clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
   background-color: var(--transparentblue);
   height: 15vh;
@@ -1090,6 +1100,7 @@ img {
 }
 
 .workheadingstyle{
+  -webkit-clip-path: polygon(0 0, 94% 0, 53% 100%, 0% 100%);
   clip-path: polygon(0 0, 94% 0, 53% 100%, 0% 100%);
   background-color: var(--fadedpurple);
   width: 90vw;
@@ -1178,6 +1189,7 @@ img {
 }
 
 .workhorizontalline, .internshiphorizontalline{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: 75vw;
   height: .5vh;
@@ -1188,6 +1200,7 @@ img {
 }
 
 .workverticalline, .internshipverticalline{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: .4vh;
   height: 0vh;
@@ -1272,6 +1285,7 @@ img {
 }
 
 .volunteerhorizontalline{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: 75vw;
   height: .5vh;
@@ -1282,6 +1296,7 @@ img {
 }
 
 .volunteerverticalline{
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   width: .4vh;
   height: 80vh;
@@ -1384,13 +1399,15 @@ img {
   top: 30vh;
 }
 
-/*contact*/
-
-.container7 {
+/*return to top*/
+.backtop{
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 25%, 0 50%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 25%, 0 50%, 0% 25%);
+  background-color: var(--darkblue);
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 1350vh;
-  background-color: var(--lightbeige);
+  top: 1340vh;
+  height: 5vh;
+  width: 4vw;
+  left: 47.5vw;
+  z-index: 10;
 }
